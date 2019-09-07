@@ -1,0 +1,10 @@
+{
+    "env": {
+        "MONGODB_ATLAS_PWD": "nodeAuction",
+        "JWT_KEY": "node_secret",
+        "oauth_google_clientID": "358284062491-htghid97i9onhs4v9it3u7u9r1ruaki8.apps.googleusercontent.com",
+        "oauth_google_clientSecret": "BgRt2IJfj1Xu1t0MPQ1hb4Vq",
+        "oauth_facebook_clientID": "2911132965570569",
+        "oauth_facebook_clientSecret": "5b0e7b5a2d0c3a35ac038346e405cf1f"
+    }
+}
