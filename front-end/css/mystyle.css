@@ -19,9 +19,11 @@ nav {
 /* Add-card Design */
 
 .add-card {
+
     -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
     box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);    
+
 }
 
 .add-card-h3 {
@@ -88,6 +90,16 @@ nav {
     height: 300px;
 }
 
+.dummy-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    margin-top: 7px;
+    padding: 20px;
+
+}
+
 /* Dummy Comment Profile Image */
 
 .dummy-comment-profile-image {
@@ -109,4 +121,17 @@ nav {
 
 .comment {
     border-bottom: 1px solid rgba(0, 0, 0, 0.452)
+}
+
+
+ul.tabs {
+    display : flex;
+}
+
+li.tab {
+   flex-basis : 50%;
+}
+
+li.active {
+    background-color: blue;
 }

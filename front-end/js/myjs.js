@@ -11,4 +11,9 @@
     $('.tabs').tabs();
   });
  
+ // Modal Trigger
+
+ $(document).ready(function(){
+  $('.modal').modal();
+});
         

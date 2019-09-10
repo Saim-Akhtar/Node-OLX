@@ -20,11 +20,13 @@
           <img src="img/logo.png" alt="">
         </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Login or Register</a></li>
+        <li><a href="profile.html">Your Name</a></li>
+        <div class="dummy-logo"></div>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Login or Register</a></li>
+        <div class="dummy-profile-image"></div>
+        <li><a href="profile.html">Your Name</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -59,13 +61,67 @@
                  <div class="col s4 m4 l4">
                     <div class="dummy-profile-image right"></div>
                  </div>
-                    <div class="col s8 m8 l8">
+                    <div class="col s6 m6 l6">
                         <h2 class="white-text">Your Name</h2>
                         <h4 class="white-text">Your Sub title</h4>
                         <div class="white-text">
 
                         </div>
                         <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo obcaecati distinctio inventore ad eaque repellat consequuntur, quam ullam. Temporibus, unde! Nisi quos, voluptatum iure corrupti illum deleniti temporibus earum?</p>
+                    </div>
+                    <div class="col s2 m2 l2">
+                      <!-- Post your Add Area -->
+
+                        <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                              <div class="modal-content">
+                                <div class="row">
+                                  <form class="col s12">
+                                    <div class="row">
+                                      <div class="input-field col s12">
+                                        <input placeholder="Placeholder" id="product_name" type="text" class="validate">
+                                        <label for="first_name">Product Name</label>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="input-field col s12">
+                                        <input placeholder="Placeholder" id="product_subtitle" type="text" class="validate">
+                                        <label for="first_name">Sub Title </label>
+                                      </div>
+                                    </div>
+                                    <div class="input-field col s12">
+                                      <textarea id="product_description" class="materialize-textarea"></textarea>
+                                      <label for="textarea1">Enter your Product Detail briefly</label>
+                                    </div>
+                                  </div>
+                                    <div class="row">
+                                      <div class="col s12">
+                                        <div class="file-field input-field">
+                                          <div class="btn">
+                                            <span>File</span>
+                                            <input type="file" multiple>
+                                          </div>
+                                          <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row s12">
+                                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                              <i class="material-icons right">cloud</i>
+                                          </button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                              </div>
+                            </div>
+
                     </div> 
               </div>
               <div class="row">
@@ -134,7 +190,7 @@
                     </div>
                     <div class="col s3 m3 l3">
                         <h3>$234.23</h3>
-                        <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
+                        <h3 class="bid-status red-text">Rejected</h3>
                     </div>
                   </div>
                   </div>
@@ -150,7 +206,7 @@
                       </div>
                       <div class="col s3 m3 l3">
                           <h3>$234.23</h3>
-                          <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
+                          <h3 class="bid-status green-text">Accepted</h3>
                       </div>
                     </div>
                     </div>
@@ -166,8 +222,8 @@
                         </div>
                         <div class="col s3 m3 l3">
                             <h3>$234.23</h3>
-                            <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
-                        </div>
+                            <h3 class="bid-status yellow-text">Pending</h3>
+                          </div>
                       </div>
                       </div>
           
