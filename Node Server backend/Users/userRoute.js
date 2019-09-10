@@ -39,7 +39,7 @@ const upload = multer({
 const userController = require('./userController');
 // const userAuth = require('./userAccountAuthentication');
 const User = require('../Models/userModel')
-require('../middleware/passport')
+require('../config/passport')
 
 // SignUp User
 router.post('/signup', upload.single('profilePic'), userController.signUp)

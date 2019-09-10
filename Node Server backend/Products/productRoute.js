@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const passport = require('passport')
 
-const passportAuth = require('../middleware/passport')
+const passportAuth = require('../config/passport')
 const productController = require('./productController')
 
 
@@ -51,6 +51,9 @@ router.post('/', upload.single('productImage'), productController.addProduct)
 
 // Add a Bid to a Product
 router.patch('/bidding/:productID', productController.addBid)
+
+// Modify A Users Bid 
+router.patch('/modifyBid/:productID', productController.modifyBid)
 
 // Update Product Sold
 router.patch('/sell/:productID', productController.addBuyer)

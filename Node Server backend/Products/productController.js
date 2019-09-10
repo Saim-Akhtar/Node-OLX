@@ -4,6 +4,22 @@ const mongoose = require('mongoose')
 const JWT = require('jsonwebtoken');
 
 const Product = require('../Models/productModel')
+const userNotifier = require('../Models/userNotifier')
+
+const verifyHighestBidPrice = async(id, req) => {
+    const checkData = await Product.findById(id).select('highestBidPrice bids')
+    let highestPrice
+
+    if (checkData.bids.length !== 0) {
+        const getBidPrices = checkData.bids.map(bid => bid.biddingPrice)
+        highestPrice = Math.max(...getBidPrices, checkData.highestBidPrice, req.body.biddingPrice)
+    } else {
+        console.log(checkData.highestBidPrice, req.body.biddingPrice)
+        highestPrice = Math.max(checkData.highestBidPrice, req.body.biddingPrice)
+    }
+    return highestPrice
+}
+
 
 module.exports = {
     FetchAll: (req, res, next) => {
@@ -100,22 +116,10 @@ module.exports = {
     addBid: async(req, res, next) => {
 
         const id = req.params.productID
-        const checkData = await Product.findById(id).select('highestBidPrice bids')
-        let highestPrice
-        if (checkData.bids.length !== 0) {
-            const getBidPrices = checkData.bids.map(bid => bid.biddingPrice)
-            console.log(getBidPrices)
-            highestPrice = Math.max(...getBidPrices, checkData.highestBidPrice, req.body.biddingPrice)
-        } else {
-            console.log(checkData.highestBidPrice, req.body.biddingPrice)
-            highestPrice = Math.max(checkData.highestBidPrice, req.body.biddingPrice)
-        }
-
-        console.log(highestPrice)
-        Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice }, "$push": { "bids": req.body } })
-            // Product.update({ _id: id }, { "$set": { "highestBidPrice": "15000", "bids": [] } })
-            .exec()
-            .then((data) => {
+        const highestPrice = await verifyHighestBidPrice(id, req)
+        try {
+            data = await Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice }, "$push": { "bids": req.body } }).exec()
+            if (data) {
                 res.status(200).json({
                     message: `Successful bid on ${id} `,
                     request: {
@@ -123,14 +127,52 @@ module.exports = {
                         url: 'http://localhost:3000/products/' + id
                     }
                 })
+            }
+        } catch (error) {
+            res.status(404).json({
+                Error: error,
+                message: "Failed to bid the product",
+                status: "404"
             })
-            .catch((error) => {
+        }
+
+    },
+
+    modifyBid: async(req, res, next) => {
+
+        const id = req.params.productID
+        const highestPrice = await verifyHighestBidPrice(id, req)
+        try {
+            // data = await Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice }, "$push": { "bids": req.body } }).exec()
+            data = await Product.update({ _id: id, "bids.bidderID": req.body.bidderID }, { '$set': { 'highestBidPrice': highestPrice, 'bids.$.biddingPrice': req.body.biddingPrice } })
+                // data = await Product.findOne({ _id: id })
+            if (!data) {
                 res.status(404).json({
-                    Error: error,
-                    message: "Failed to bid the product",
-                    status: "404"
+                    message: `Failed modified bid on ${id} `,
+                    request: {
+                        type: 'GET',
+                        url: 'http://localhost:3000/products/' + id
+                    }
                 })
+            }
+            if (data) {
+                // console.log(data)
+                res.status(200).json({
+                    message: `Successfully modified bid on ${id} `,
+                    request: {
+                        type: 'GET',
+                        url: 'http://localhost:3000/products/' + id
+                    }
+                })
+            }
+        } catch (error) {
+            res.status(404).json({
+                Error: error,
+                message: "Failed to bid the product",
+                status: "404"
             })
+        }
+
     },
 
     addBuyer: (req, res, next) => {
