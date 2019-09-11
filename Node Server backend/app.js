@@ -5,22 +5,17 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 
-
-// const productRoute = require('./api/routes/products')
-
-// const userRoute = require('./api/routes/users')
-
-// const userRoute = require('./routes/users')
+// Extracting the routes 
 const user = require('./Users/userRoute')
 const product = require('./Products/productRoute')
 
 
+// mongoDB connection and settings
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 mongoose.connect('mongodb+srv://saim59:' + process.env.MONGODB_ATLAS_PWD + '@db-auction-system-bitsj.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
 })
-
 
 mongoose.Promise = global.Promise
 

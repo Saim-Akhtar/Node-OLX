@@ -1,10 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
 const multer = require('multer')
-const passport = require('passport')
 
-const passportAuth = require('../config/passport')
+// Extracting the product controller
 const productController = require('./productController')
 
 
@@ -34,8 +32,6 @@ const upload = multer({
     fileFilter: fileFilter
 })
 
-// Extracting Product Model from Models
-const Product = require('../Models/productModel')
 
 // Fetch all the Products
 router.get('/', productController.FetchAll)

@@ -1,11 +1,11 @@
 const express = require('express')
-const router = express.Router()
 const mongoose = require('mongoose')
-const JWT = require('jsonwebtoken');
 
+// Extracting the Product Model
 const Product = require('../Models/productModel')
-const userNotifier = require('../Models/userNotifier')
 
+
+// Verifing the highest price in the bids for a Product and returns the Highest Price
 const verifyHighestBidPrice = async(id, req) => {
     const checkData = await Product.findById(id).select('highestBidPrice bids')
     let highestPrice
@@ -22,6 +22,7 @@ const verifyHighestBidPrice = async(id, req) => {
 
 
 module.exports = {
+    // fetch all products from DB
     FetchAll: (req, res, next) => {
         Product.find()
             .select('_id title highestBidPrice productImage')
@@ -51,6 +52,7 @@ module.exports = {
                 })
             })
     },
+    // Fetch a single Product 
     FetchAProduct: (req, res, next) => {
         const id = req.params.productID
         Product.findById(id)
@@ -61,11 +63,6 @@ module.exports = {
                     res.status(200).json({
                         Product: product,
                         id: id
-                            // request: {
-                            //     type: 'GET',
-                            //     description: 'Fetch All Products',
-                            //     url: 'http://localhost:3000/products'
-                            // }
                     })
                 } else {
                     res.status(420).json({
@@ -73,7 +70,7 @@ module.exports = {
                     })
                 }
             })
-            .catch(err => {
+            .catch(error => {
                 res.status(404).json({
                     Error: error,
                     message: "Failed To Fetch Product",
@@ -81,6 +78,8 @@ module.exports = {
                 })
             })
     },
+
+    // saving the product
     addProduct: async(req, res, next) => {
         const product = new Product({
             _id: mongoose.Types.ObjectId(),
@@ -113,6 +112,7 @@ module.exports = {
             })
     },
 
+    // adding a new Bid in the product
     addBid: async(req, res, next) => {
 
         const id = req.params.productID
@@ -138,14 +138,14 @@ module.exports = {
 
     },
 
+
+    // modifying a current Bid in the product
     modifyBid: async(req, res, next) => {
 
         const id = req.params.productID
         const highestPrice = await verifyHighestBidPrice(id, req)
         try {
-            // data = await Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice }, "$push": { "bids": req.body } }).exec()
             data = await Product.update({ _id: id, "bids.bidderID": req.body.bidderID }, { '$set': { 'highestBidPrice': highestPrice, 'bids.$.biddingPrice': req.body.biddingPrice } })
-                // data = await Product.findOne({ _id: id })
             if (!data) {
                 res.status(404).json({
                     message: `Failed modified bid on ${id} `,
@@ -175,6 +175,7 @@ module.exports = {
 
     },
 
+    // adding a buyer of the product
     addBuyer: (req, res, next) => {
         const id = req.params.productID
         Product.update({ _id: id }, req.body).exec()
@@ -196,6 +197,7 @@ module.exports = {
             })
     },
 
+    // removing the product
     removeProduct: (req, res, next) => {
         const id = req.params.productID
         Product.findByIdAndDelete(id)

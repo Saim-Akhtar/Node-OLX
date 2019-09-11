@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const JWT = require('jsonwebtoken');
 const User = require('../Models/userModel');
 
-
+// generating a JWT token
 generateToken = user => {
     return JWT.sign({
             id: user._id
@@ -87,6 +87,7 @@ module.exports = {
         });
     },
 
+    // getting a user profile 
     GetProfile: (req, res, next) => {
         const id = req.params.userID
         User.findById(id)
@@ -113,6 +114,7 @@ module.exports = {
             })
     },
 
+    // updating the user data
     updateUser: async(req, res, next) => {
         const id = req.params.userID
         console.log(req.body)

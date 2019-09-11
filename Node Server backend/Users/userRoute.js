@@ -1,9 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 const multer = require('multer')
-const jwt = require('jsonwebtoken')
 const passport = require('passport')
 
 const storage = multer.diskStorage({
@@ -35,10 +32,9 @@ const upload = multer({
 
 
 
-
+// Extracting the user controller
 const userController = require('./userController');
-// const userAuth = require('./userAccountAuthentication');
-const User = require('../Models/userModel')
+
 require('../config/passport')
 
 // SignUp User
