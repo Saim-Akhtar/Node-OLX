@@ -62,91 +62,95 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m12 l12">
-      <h1 class="my-heading">Latest Items Available for Auction</h1>
+      <h4 class="my-heading">Latest Items Available for Auction</h4>
     </div>
   </div>
 </div>
 
-<!-- Add Cards -->
 <div class="container">
-  <div class="col s12 m12 l12">
-    <!-- Card 1 -->
-    <div class="add-card">
-      <div class="row">
-        <div class="col s3 m3 l3">
-          <div class="dummy-add-image">Dummy Image</div>
+  <div class="row">
+    <div class="col s12 m12">
+
+        <div class="col s12 m12">
+            <div id="my-card" class="card horizontal">
+              <div class="card-image">
+                <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="row">
+                    <div class="col s12 m9 l9">
+                        <h5>MAIN TITLE GOES HERE</h5>
+                        <h5>SUB-TITLE</h5>
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="col s12 m3 l3">
+                      <h5>$323.33</h5>
+                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post bid</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="card-action">
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- MODEL FOR POSTING BID -->
+                                      <!-- Modal Structure -->
+                                      <div id="modal1" class="modal">
+                                          <div class="modal-content">
+                                            <div class="row">
+                                              <form class="col s12">
+                                                <div class="row">
+                                                  <div class="input-field col s12">
+                                                    <input placeholder="Placeholder" id="bid-price" type="text" class="validate">
+                                                    <label for="bid-price">Price</label>
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                </div>
+                                                <div class="input-field col s12">
+                                                  <textarea id="product_description" class="materialize-textarea"></textarea>
+                                                  <label for="textarea1">Describe your Bid Briefly</label>
+                                                </div>
+                                              </div>
+                                              </form>
+                                            </div>
+                                          <div class="modal-footer">
+                                              <a class="waves-effect green waves-light btn">Post</a>
+                                            <a href="#!" class="modal-close waves-effect waves-green red btn btn-flat">Cancel</a>
+                                          </div>
+                                        </div>
+          <!-- ============================ -->
+
+
+      <!-- <div class="card horizontal">
+        <div class="card-image">
+          <img src="img/add-thumbnail-01.jpg" width="100px" height="190px">
         </div>
-        <div class="col s6 m6 l6">
-          <h3 class="add-card-h3">Some Heading</h3>
-          <h4 class="add-card-h4">Sub Heading</h4>
-          <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-        </div>
-        <div class="col s3 m3 l3">
-          <h4 class="button">$342.00</h4>
-        </div>
-      </div>
-    </div>
-    <!-- Card 2 -->
-    <div class="add-card">
-      <div class="row">
-        <div class="col s3 m3 l3">
-          <div class="dummy-add-image">Dummy Image</div>
-        </div>
-        <div class="col s6 m6 l6">
-          <h3 class="add-card-h3 white-text">Some Heading</h3>
-          <h4 class="add-card-h4 white-text">Sub Heading</h4>
-          <p class="add-card-p white-text">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-        </div>
-        <div class="col s3 m3 l3">
-          <h4 class="button">$342.00</h4>
-        </div>
-      </div>
-    </div>
-    <!-- Card 3 -->
-    <div class="add-card">
-      <div class="row">
-        <div class="col s3 m3 l3">
-          <div class="dummy-add-image">Dummy Image</div>
-        </div>
-        <div class="col s6 m6 l6">
-          <h3 class="add-card-h3">Some Heading</h3>
-          <h4 class="add-card-h4">Sub Heading</h4>
-          <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-        </div>
-        <div class="col s3 m3 l3">
-          <h4 class="button">$342.00</h4>
-        </div>
-      </div>
-    </div>
-    <!-- Card 4 -->
-    <div class="add-card">
-      <div class="row">
-        <div class="col s3 m3 l3">
-          <div class="dummy-add-image">Dummy Image</div>
-        </div>
-        <div class="col s6 m6 l6">
-          <h3 class="add-card-h3">Some Heading</h3>
-          <h4 class="add-card-h4">Sub Heading</h4>
-          <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-        </div>
-        <div class="col s3 m3 l3">
-          <h4 class="button">$342.00</h4>
-        </div>
+        <div class="card-stacked"></div>
+          <div class="card-content">
+            <div class="row">
+              <div class="col m9 l9">
+                  <h3>Main Title</h3>
+                  <h4>Sub Title</h4>
+                  <p>I am a very simple card. I am good at containing small bits of information.</p>
+              </div>
+              <div class="col m3 l3">
+                <h3>$323.232</h3>
+                <a class="waves-effect green waves-light btn">BID NOW</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
-
-  <!-- Pagination -->
-  <ul class="pagination center">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
-
 </div>
 
 
