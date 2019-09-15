@@ -54,23 +54,18 @@
 
 
 <!--=============== Content Start ================= -->
-
   <div class="profile-header">
       <div class="container">
           <div class="border">
               <div class="row">
-                 <div class="col s12 m6 l4">
-                    <img src="img/profile-image.png" id="user-profile" width="100%" height="100%">
+                 <div class="col s4 m4 l4">
+                    <div class="dummy-profile-image right"></div>
                  </div>
-                    <div class="col s12 m6 l8">
+                    <div class="col s6 m6 l6">
                         <h2 class="white-text">Your Name</h2>
                         <h4 class="white-text">Your Sub title</h4>
                         <div class="white-text">
-                          <i class="material-icons">star</i>
-                          <i class="material-icons">star</i>
-                          <i class="material-icons">star</i>
-                          <i class="material-icons">star</i>
-                          <i class="material-icons">star</i>
+
                         </div>
                         <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo obcaecati distinctio inventore ad eaque repellat consequuntur, quam ullam. Temporibus, unde! Nisi quos, voluptatum iure corrupti illum deleniti temporibus earum?</p>
                     </div>
@@ -78,7 +73,8 @@
                       <!-- Post your Add Area -->
 
                         <!-- Modal Trigger -->
-                          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
+
                             <!-- Modal Structure -->
                             <div id="modal1" class="modal">
                               <div class="modal-content">
@@ -122,7 +118,7 @@
                                   </form>
                                 </div>
                               <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn red btn-flat">Cancel</a>
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                               </div>
                             </div>
 
@@ -148,36 +144,29 @@
   <div class="col s12">
     <ul class="tabs center">
       <li class="tab col s3"><a href="#adds">Your Adds</a></li>
-      <li class="tab col s3"><a class="active" href="#comments">Your Bids</a></li>
+      <li class="tab col s3"><a class="active" href="#comments">Your Comments</a></li>
     </ul>
   </div>
   <div id="adds" class="col s12">
     <div id="your-add-list">
         <div class="container">
           <div class="row">
-            <div class="col s12 m12">
-              <div id="my-card" class="card horizontal">
-                <div class="card-image">
-                  <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
-                </div>
-                <div class="card-stacked">
-                  <div class="card-content">
+            <div class="col s12 m12 l12">
+                <div class="add-card">
                     <div class="row">
-                      <div class="col s12 m9 l9">
-                          <h5>MAIN TITLE GOES HERE</h5>
-                          <h5>SUB-TITLE</h5>
-                          <p>I am a very simple card. I am good at containing small bits of information.</p>
+                      <div class="col s3 m3 l3">
+                        <div class="dummy-add-image">Dummy Image</div>
                       </div>
-                      <div class="col s12 m3 l3">
-                        <h5>$323.33</h5>
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Detail</a>
+                      <div class="col s6 m6 l6">
+                        <h3 class="add-card-h3">Some Heading</h3>
+                        <h4 class="add-card-h4">Sub Heading</h4>
+                        <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
+                      </div>
+                      <div class="col s3 m3 l3">
+                        <h4 class="button">$342.00</h4>
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="card-action">
-                  </div> -->
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -192,21 +181,67 @@
                 <div class="comment-list">
                   <div class="comment">
                     <div class="row">
-                      <div class="col s12 m3 l3 center">
-                          <img src="img/profile-image.png" width="40%">
-                          <h5>User Name</h5>
+                      <div class="col s3 m3 l3">
+                          <div class="dummy-comment-profile-image"></div>
+                          <h3>User Name</h3>
                       </div>
-                    <div class="col s12 m6 l6">
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elitdolor sit amet consectetur adipisicing elit. Cor</p>
+                    <div class="col s6 m6 l6">
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
                     </div>
-                    <div class="col s12 m3 l3 center">
-                        <h6>$234.23</h6>
-                        <h6 class="bid-status red-text">Rejected</h6>
+                    <div class="col s3 m3 l3">
+                        <h3>$234.23</h3>
+                        <h3 class="bid-status red-text">Rejected</h3>
                     </div>
                   </div>
                   </div>
+          
+                  <div class="comment">
+                      <div class="row">
+                        <div class="col s3 m3 l3">
+                            <div class="dummy-comment-profile-image"></div>
+                            <h3>User Name</h3>
+                        </div>
+                      <div class="col s6 m6 l6">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
+                      </div>
+                      <div class="col s3 m3 l3">
+                          <h3>$234.23</h3>
+                          <h3 class="bid-status green-text">Accepted</h3>
+                      </div>
                     </div>
                     </div>
+          
+                    <div class="comment">
+                        <div class="row">
+                          <div class="col s3 m3 l3">
+                              <div class="dummy-comment-profile-image"></div>
+                              <h3>User Name</h3>
+                          </div>
+                        <div class="col s6 m6 l6">
+                          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
+                        </div>
+                        <div class="col s3 m3 l3">
+                            <h3>$234.23</h3>
+                            <h3 class="bid-status yellow-text">Pending</h3>
+                          </div>
+                      </div>
+                      </div>
+          
+                      <div class="comment">
+                          <div class="row">
+                            <div class="col s3 m3 l3">
+                                <div class="dummy-comment-profile-image"></div>
+                                <h3>User Name</h3>
+                            </div>
+                          <div class="col s6 m6 l6">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
+                          </div>
+                          <div class="col s3 m3 l3">
+                              <h3>$234.23</h3>
+                              <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
+                          </div>
+                        </div>
+                        </div>
                 </div>
               </div>
             </div>

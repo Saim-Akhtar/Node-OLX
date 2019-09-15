@@ -11,6 +11,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="css/styleguide.css">
   <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/authcss.css">
 </head>
 <body>
     <!-- Main Navigation -->
@@ -50,96 +51,74 @@
   
 
 
+<!--=============== Content ================= -->
 
-<!--=============== Content Start ================= -->
-
-<div class="container">
-  <div class="add-header">
-      <div class="row">
-          <div class="col s12 m5 l5 center">
-            <img src="img/add-thumbnail-03.jpg" width="100%" alt="">
-          </div>
-          <div class="col s12 m5 l5">
-            <h5 class="product-main-title">Product Main Title</h5>
-            <h6 class="product-sub-title">Product Sub Title</h6>
-            <p class="product-post-date">8th September 2019</p>
-            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptates a pariatur doloribus laborum iusto incidunt aliquid mollitia quis, sint porro reiciendis, sapiente quisquam nemo aperiam enim quibusdam! In, iusto.</p>
-            
-          </div>
-          <div class="col s5 m2 l2 align-center">
-            <h6 class="add-price center-align">$343.00</h6>
-            <h6 class="green-text center-align">Unsold</h6>
-            <a class="waves-effect waves-light btn center-align">Bid Now</a>
-          </div>
+<div class="login-form-container white z-depth-2">
+        <ul class="tabs teal">
+            <li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
+            <li class="tab col s3"><a class="white-text" href="#register">register</a></li>
+        </ul>
+        <div id="login" class="col s12">
+            <form class="col s12">
+                <div class="form-container">
+                    <h3 class="teal-text">Hello</h3>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <button id="login_btn" class="btn waves-effect waves-light teal" type="submit" name="action">Connect</button>
+                        <br>
+                        <br>
+                        <a href="">Forgotten password?</a>
+                    </center>
+                </div>
+            </form>
         </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m12 l12">
-      <h4 class="my-heading">Current Offers</h4>
+        <div id="register" class="col s12">
+            <form class="col s12">
+                <div class="form-container">
+                    <h3 class="teal-text">Welcome</h3>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="reg_email" type="email" class="validate">
+                            <label for="reg_email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="reg_password" type="password" class="validate">
+                            <label for="reg_password">Password</label>
+                        </div>
+                    </div>
+                    <center>
+                        <button id="register_btn" class="btn waves-effect waves-light teal" type="submit" name="action">Submit</button>
+                    </center>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col s12 m12 l12">
-      <div class="comment-list">
-
-
-
-        <div class="comment">
-          <div class="row">
-            <div class="col s12 m3 l3 center">
-                <img src="img/profile-image.png" width="40%">
-                <h5>User Name</h5>
-            </div>
-          <div class="col s12 m6 l6">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elitdolor sit amet consectetur adipisicing elit. Cor</p>
-          </div>
-          <div class="col s12 m3 l3 center">
-              <h6>$234.23</h6>
-              <a class="waves-effect waves-light btn center-align green">Accept Offer</a>
-          </div>
-        </div>
-        </div>
-
-        <div class="comment">
-          <div class="row">
-            <div class="col s12 m3 l3 center">
-                <img src="img/profile-image.png" width="40%">
-                <h5>User Name</h5>
-            </div>
-          <div class="col s12 m6 l6">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elitdolor sit amet consectetur adipisicing elit. Cor</p>
-          </div>
-          <div class="col s12 m3 l3 center">
-              <h6>$234.23</h6>
-              <a class="waves-effect waves-light btn center-align green">Accept Offer</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="comment">
-          <div class="row">
-            <div class="col s12 m3 l3 center">
-                <img src="img/profile-image.png" width="40%">
-                <h5>User Name</h5>
-            </div>
-          <div class="col s12 m6 l6">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elitdolor sit amet consectetur adipisicing elit. Cor</p>
-          </div>
-          <div class="col s12 m3 l3 center">
-              <h6>$234.23</h6>
-              <a class="waves-effect waves-light btn center-align green">Accept Offer</a>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    
-  </div>
-
-<!--=============== Content End================= -->
+<!--=============== Content End ================= -->
 
 <!-- Footer -->
 
