@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Online Auction System</title>
 
-  <!-- CSS  -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="css/styleguide.css">
-  <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Online Auction System</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+
 <body>
     <!-- Main Navigation -->
-  <nav class="" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">
-          <img src="img/logo.png" alt="">
-        </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="profile.html">Your Name</a></li>
-        <div class="dummy-logo"></div>
-      </ul>
+    <nav class="" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="img/logo.png" alt="">
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="profile.html">Your Name</a></li>
+                <div class="dummy-logo"></div>
+            </ul>
 
-      <ul id="nav-mobile" class="sidenav">
-        <div class="dummy-profile-image"></div>
-        <li><a href="profile.html">Your Name</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="sidenav">
+                <div class="dummy-profile-image"></div>
+                <li><a href="profile.html">Your Name</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <!-- Catogeries Menu -->
+    <div class="cat">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <ul class="my-links Catogeries">
+                    <li><a href="#">Houses</a></li>
+                    <li><a href="#">Cars</a></li>
+                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">Exotic Items</a></li>
+                    <li><a href="#">Militry Equipments</a></li>
+                    <li><a href="#">Hunting</a></li>
+                    <li><a href="#">Left Overs</a></li>
+                    <li><a href="#">More</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <!-- Catogeries Menu -->
-  <div class="cat">
-      <div class="row center">
-          <div class="col s12 m12 l12">
-              <ul class="my-links Catogeries">
-                  <li><a href="#">Houses</a></li>
-                  <li><a href="#">Cars</a></li>
-                  <li><a href="#">Bikes</a></li>
-                  <li><a href="#">Exotic Items</a></li>
-                  <li><a href="#">Militry Equipments</a></li>
-                  <li><a href="#">Hunting</a></li>
-                  <li><a href="#">Left Overs</a></li>
-                  <li><a href="#">More</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
-  
 
 
 
-<!--=============== Content Start ================= -->
-  <div class="profile-header">
-      <div class="container">
-          <div class="border">
-              <div class="row">
-                 <div class="col s4 m4 l4">
-                    <div class="dummy-profile-image right"></div>
-                 </div>
+
+    <!--=============== Content Start ================= -->
+    <div class="profile-header">
+        <div class="container">
+            <div class="border">
+                <div class="row">
+                    <div class="col s4 m4 l4">
+                        <div class="dummy-profile-image right"></div>
+                    </div>
                     <div class="col s6 m6 l6">
                         <h2 class="white-text">Your Name</h2>
                         <h4 class="white-text">Your Sub title</h4>
@@ -70,244 +72,259 @@
                         <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo obcaecati distinctio inventore ad eaque repellat consequuntur, quam ullam. Temporibus, unde! Nisi quos, voluptatum iure corrupti illum deleniti temporibus earum?</p>
                     </div>
                     <div class="col s2 m2 l2">
-                      <!-- Post your Add Area -->
+                        <!-- Post your Add Area -->
 
                         <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
 
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                              <div class="modal-content">
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
                                 <div class="row">
-                                  <form class="col s12">
-                                    <div class="row">
-                                      <div class="input-field col s12">
-                                        <input placeholder="Placeholder" id="product_name" type="text" class="validate">
-                                        <label for="first_name">Product Name</label>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="input-field col s12">
-                                        <input placeholder="Placeholder" id="product_subtitle" type="text" class="validate">
-                                        <label for="first_name">Sub Title </label>
-                                      </div>
-                                    </div>
-                                    <div class="input-field col s12">
-                                      <textarea id="product_description" class="materialize-textarea"></textarea>
-                                      <label for="textarea1">Enter your Product Detail briefly</label>
-                                    </div>
-                                  </div>
-                                    <div class="row">
-                                      <div class="col s12">
-                                        <div class="file-field input-field">
-                                          <div class="btn">
-                                            <span>File</span>
-                                            <input type="file" multiple>
-                                          </div>
-                                          <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
-                                          </div>
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="Placeholder" id="product_name" type="text" class="validate">
+                                                <label for="first_name">Product Name</label>
+                                            </div>
                                         </div>
-                                      </div>
-                                      <div class="row s12">
-                                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                              <i class="material-icons right">cloud</i>
-                                          </button>
-                                      </div>
-                                    </div>
-                                  </form>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="Placeholder" id="product_subtitle" type="text" class="validate">
+                                                <label for="first_name">Sub Title </label>
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <textarea id="product_description" class="materialize-textarea"></textarea>
+                                            <label for="textarea1">Enter your Product Detail briefly</label>
+                                        </div>
                                 </div>
-                              <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="file-field input-field">
+                                            <div class="btn">
+                                                <span>File</span>
+                                                <input type="file" multiple>
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row s12">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                      <i class="material-icons right">cloud</i>
+                    </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
                                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                              </div>
                             </div>
+                        </div>
 
-                    </div> 
-              </div>
-              <div class="row">
-                  <div class="col s6 m6 l6">
-                    <p class="white-text"><strong>Email     : </strong>        someone@gmail.com</p>
-                    <p class="white-text"><strong>Phone     : </strong>        123123123</p>
-                  </div>
-                  <div class="col s6 m6 l6">
-                    <p class="white-text"><strong>City     : </strong>      Some City</p>
-                    <p class="white-text"><strong>Address     : </strong>      somewhere in this world</p>
-                 </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-<!-- Tab Area -->
-
-<div class="row">
-  <div class="col s12">
-    <ul class="tabs center">
-      <li class="tab col s3"><a href="#adds">Your Adds</a></li>
-      <li class="tab col s3"><a class="active" href="#comments">Your Comments</a></li>
-    </ul>
-  </div>
-  <div id="adds" class="col s12">
-    <div id="your-add-list">
-        <div class="container">
-          <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="add-card">
-                    <div class="row">
-                      <div class="col s3 m3 l3">
-                        <div class="dummy-add-image">Dummy Image</div>
-                      </div>
-                      <div class="col s6 m6 l6">
-                        <h3 class="add-card-h3">Some Heading</h3>
-                        <h4 class="add-card-h4">Sub Heading</h4>
-                        <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-                      </div>
-                      <div class="col s3 m3 l3">
-                        <h4 class="button">$342.00</h4>
-                      </div>
                     </div>
-                  </div>
-            </div>
-          </div>
-        </div>
-       </div>
-    </div>
-  </div>
-  <div id="comments" class="col s12">
-    <div id="your-comment-list">
-      <div class="container">
-          <div class="row">
-              <div class="col s12 m12 l12">
-                <div class="comment-list">
-                  <div class="comment">
-                    <div class="row">
-                      <div class="col s3 m3 l3">
-                          <div class="dummy-comment-profile-image"></div>
-                          <h3>User Name</h3>
-                      </div>
-                    <div class="col s6 m6 l6">
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
-                    </div>
-                    <div class="col s3 m3 l3">
-                        <h3>$234.23</h3>
-                        <h3 class="bid-status red-text">Rejected</h3>
-                    </div>
-                  </div>
-                  </div>
-          
-                  <div class="comment">
-                      <div class="row">
-                        <div class="col s3 m3 l3">
-                            <div class="dummy-comment-profile-image"></div>
-                            <h3>User Name</h3>
-                        </div>
-                      <div class="col s6 m6 l6">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
-                      </div>
-                      <div class="col s3 m3 l3">
-                          <h3>$234.23</h3>
-                          <h3 class="bid-status green-text">Accepted</h3>
-                      </div>
-                    </div>
-                    </div>
-          
-                    <div class="comment">
-                        <div class="row">
-                          <div class="col s3 m3 l3">
-                              <div class="dummy-comment-profile-image"></div>
-                              <h3>User Name</h3>
-                          </div>
-                        <div class="col s6 m6 l6">
-                          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
-                        </div>
-                        <div class="col s3 m3 l3">
-                            <h3>$234.23</h3>
-                            <h3 class="bid-status yellow-text">Pending</h3>
-                          </div>
-                      </div>
-                      </div>
-          
-                      <div class="comment">
-                          <div class="row">
-                            <div class="col s3 m3 l3">
-                                <div class="dummy-comment-profile-image"></div>
-                                <h3>User Name</h3>
-                            </div>
-                          <div class="col s6 m6 l6">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam sed iste!</p>
-                          </div>
-                          <div class="col s3 m3 l3">
-                              <h3>$234.23</h3>
-                              <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
-                          </div>
-                        </div>
-                        </div>
                 </div>
-              </div>
+                <div class="row">
+                    <div class="col s6 m6 l6">
+                        <p class="white-text"><strong>Email : </strong> someone@gmail.com</p>
+                        <p class="white-text"><strong>Phone : </strong> 123123123</p>
+                    </div>
+                    <div class="col s6 m6 l6">
+                        <p class="white-text"><strong>City : </strong> Some City</p>
+                        <p class="white-text"><strong>Address : </strong> somewhere in this world</p>
+                    </div>
+                </div>
             </div>
-      </div>
+        </div>
     </div>
 
-  </div>
-</div>
+    <!-- Tab Area -->
 
-<!--=============== Content End================= -->
-
-<!-- Footer -->
-
-  <footer class="page-footer">
-    <div class="container">
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs center">
+                <li class="tab col s3"><a href="#adds">Your Adds</a></li>
+                <li class="tab col s3"><a class="active" href="#comments">Your Comments</a></li>
+            </ul>
         </div>
-    
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menue</a></li>
-                    <li><a href="#">Story</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Security</a></li>
-                </ul>
+        <div id="adds" class="col s12">
+            <div id="your-add-list">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <div class="add-card">
+                                <div class="row">
+                                    <div class="col s3 m3 l3">
+                                        <div class="dummy-add-image">Dummy Image</div>
+                                    </div>
+                                    <div class="col s6 m6 l6">
+                                        <h3 class="add-card-h3">Some Heading</h3>
+                                        <h4 class="add-card-h4">Sub Heading</h4>
+                                        <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
+                                    </div>
+                                    <div class="col s3 m3 l3">
+                                        <h4 class="button">$342.00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#">BLOG    |</a></li>
-                    <li><a href="#">    YouTube     </a></li>
-                    <li><a href="#">    |      Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-
         </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="" href="http://materializecss.com">Materialize</a>
-      </div>
+    <div id="comments" class="col s12">
+        <div id="your-comment-list">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="comment-list">
+                            <div class="comment">
+                                <div class="row">
+                                    <div class="col s3 m3 l3">
+                                        <div class="dummy-comment-profile-image"></div>
+                                        <h3>User Name</h3>
+                                    </div>
+                                    <div class="col s6 m6 l6">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
+                                            sed iste!</p>
+                                    </div>
+                                    <div class="col s3 m3 l3">
+                                        <h3>$234.23</h3>
+                                        <h3 class="bid-status red-text">Rejected</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="row">
+                                    <div class="col s3 m3 l3">
+                                        <div class="dummy-comment-profile-image"></div>
+                                        <h3>User Name</h3>
+                                    </div>
+                                    <div class="col s6 m6 l6">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
+                                            sed iste!</p>
+                                    </div>
+                                    <div class="col s3 m3 l3">
+                                        <h3>$234.23</h3>
+                                        <h3 class="bid-status green-text">Accepted</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="row">
+                                    <div class="col s3 m3 l3">
+                                        <div class="dummy-comment-profile-image"></div>
+                                        <h3>User Name</h3>
+                                    </div>
+                                    <div class="col s6 m6 l6">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
+                                            sed iste!</p>
+                                    </div>
+                                    <div class="col s3 m3 l3">
+                                        <h3>$234.23</h3>
+                                        <h3 class="bid-status yellow-text">Pending</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="row">
+                                    <div class="col s3 m3 l3">
+                                        <div class="dummy-comment-profile-image"></div>
+                                        <h3>User Name</h3>
+                                    </div>
+                                    <div class="col s6 m6 l6">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
+                                            sed iste!</p>
+                                    </div>
+                                    <div class="col s3 m3 l3">
+                                        <h3>$234.23</h3>
+                                        <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </footer>
-  <!-- Footer Ends -->
+    </div>
+
+    <!--=============== Content End================= -->
+
+    <!-- Footer -->
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Menue</a></li>
+                        <li><a href="#">Story</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">BLOG |</a></li>
+                        <li><a href="#"> YouTube </a></li>
+                        <li><a href="#"> | Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/myjs.js"></script>
-  <script src="js/init.js"></script>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/myjs.js"></script>
+    <script src="js/init.js"></script>
 
-  </body>
+</body>
+
 </html>

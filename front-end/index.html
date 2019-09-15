@@ -1,133 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Online Auction System</title>
 
-  <!-- CSS  -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="css/styleguide.css">
-  <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Online Auction System</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+
 <body>
     <!-- Main Navigation -->
-  <nav class="" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">
-          <img src="img/logo.png" alt="">
-        </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="authentication.html">Login or Register</a></li>
-      </ul>
+    <nav class="" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="img/logo.png" alt="">
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="authentication.html">Login or Register</a></li>
+            </ul>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="authentication.html">Login or Register</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="authentication.html">Login or Register</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <!-- Catogeries Menu -->
+    <div class="cat">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <ul class="my-links Catogeries">
+                    <li><a href="#">Houses</a></li>
+                    <li><a href="#">Cars</a></li>
+                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">Exotic Items</a></li>
+                    <li><a href="#">Militry Equipments</a></li>
+                    <li><a href="#">Hunting</a></li>
+                    <li><a href="#">Left Overs</a></li>
+                    <li><a href="#">More</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Catogeries Menu -->
-  <div class="cat">
-      <div class="row center">
-          <div class="col s12 m12 l12">
-              <ul class="my-links Catogeries">
-                  <li><a href="#">Houses</a></li>
-                  <li><a href="#">Cars</a></li>
-                  <li><a href="#">Bikes</a></li>
-                  <li><a href="#">Exotic Items</a></li>
-                  <li><a href="#">Militry Equipments</a></li>
-                  <li><a href="#">Hunting</a></li>
-                  <li><a href="#">Left Overs</a></li>
-                  <li><a href="#">More</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
-  
 
-  <!-- Image Slider -->
+    <!-- Image Slider -->
 
-  <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="img/slider-image-1.jpg"></a>
-    <!-- <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <div class="carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="img/slider-image-1.jpg"></a>
+        <!-- <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
     <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
     <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a> -->
-  </div>
-
-<!-- Content -->
-<div class="container">
-  <div class="row">
-    <div class="col s12 m12 l12">
-      <h4 class="my-heading">Latest Items Available for Auction</h4>
     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col s12 m12">
-
-        <div class="col s12 m12">
-            <div id="my-card" class="card horizontal">
-              <div class="card-image">
-                <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="row">
-                    <div class="col s12 m9 l9">
-                        <h5>MAIN TITLE GOES HERE</h5>
-                        <h5>SUB-TITLE</h5>
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
-                    </div>
-                    <div class="col s12 m3 l3">
-                      <h5>$323.33</h5>
-                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post bid</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="card-action">
-                </div> -->
-              </div>
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h4 class="my-heading">Latest Items Available for Auction</h4>
             </div>
-          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12">
+
+                <div id="productList" class="col s12 m12">
+                    <!-- <div class="card horizontal productCard">
+                        <div class="card-image">
+                            <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col s12 m9 l9">
+                                        <h5>MAIN TITLE GOES HERE</h5>
+                                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                    </div>
+                                    <div class="col s12 m3 l3">
+                                        <h5>$323.33</h5>
+                                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post bid</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">View Product</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
 
 
 
-          <!-- MODEL FOR POSTING BID -->
-                                      <!-- Modal Structure -->
-                                      <div id="modal1" class="modal">
-                                          <div class="modal-content">
-                                            <div class="row">
-                                              <form class="col s12">
-                                                <div class="row">
-                                                  <div class="input-field col s12">
-                                                    <input placeholder="Placeholder" id="bid-price" type="text" class="validate">
-                                                    <label for="bid-price">Price</label>
-                                                  </div>
-                                                </div>
-                                                <div class="row">
-                                                </div>
-                                                <div class="input-field col s12">
-                                                  <textarea id="product_description" class="materialize-textarea"></textarea>
-                                                  <label for="textarea1">Describe your Bid Briefly</label>
-                                                </div>
-                                              </div>
-                                              </form>
-                                            </div>
-                                          <div class="modal-footer">
-                                              <a class="waves-effect green waves-light btn">Post</a>
-                                            <a href="#!" class="modal-close waves-effect waves-green red btn btn-flat">Cancel</a>
-                                          </div>
-                                        </div>
-          <!-- ============================ -->
+                <!-- MODEL FOR POSTING BID -->
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Placeholder" id="bid-price" type="text" class="validate">
+                                        <label for="bid-price">Price</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="product_description" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Describe your Bid Briefly</label>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="waves-effect green waves-light btn">Post</a>
+                        <a href="#!" class="modal-close waves-effect waves-green red btn btn-flat">Cancel</a>
+                    </div>
+                </div>
+                <!-- ============================ -->
 
 
-      <!-- <div class="card horizontal">
+                <!-- <div class="card horizontal">
         <div class="card-image">
           <img src="img/add-thumbnail-01.jpg" width="100px" height="190px">
         </div>
@@ -148,69 +150,82 @@
           <div class="card-action">
           </div>
         </div> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!--=============== Content End================= -->
-
-<!-- Footer -->
-
-  <footer class="page-footer">
-    <div class="container">
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/social-icon.png" alt=""></a></li>
-                </ul>
             </div>
         </div>
-    
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menue</a></li>
-                    <li><a href="#">Story</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Security</a></li>
-                </ul>
+    </div>
+    </div>
+
+
+    <!--=============== Content End================= -->
+
+    <!-- Footer -->
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Menue</a></li>
+                        <li><a href="#">Story</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">BLOG    |</a></li>
+                        <li><a href="#">    YouTube     </a></li>
+                        <li><a href="#">    |      Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+
             </div>
         </div>
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <ul class="my-links">
-                    <li><a href="#">BLOG    |</a></li>
-                    <li><a href="#">    YouTube     </a></li>
-                    <li><a href="#">    |      Facebook</a></li>
-                </ul>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="" href="http://materializecss.com">Materialize</a>
             </div>
         </div>
-        <div class="row">
-
-        </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer Ends -->
+    </footer>
+    <!-- Footer Ends -->
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/myjs.js"></script>
-  <script src="js/init.js"></script>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/myjs.js"></script>
+    <script type="module" src="./Integration/index.js"></script>
+    <!-- <script src="js/init.js"></script> -->
 
-  </body>
+</body>
+
+
 </html>

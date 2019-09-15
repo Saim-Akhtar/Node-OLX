@@ -24,8 +24,9 @@ const verifyHighestBidPrice = async(id, req) => {
 module.exports = {
     // fetch all products from DB
     FetchAll: (req, res, next) => {
+
         Product.find()
-            .select('_id title highestBidPrice productImage')
+            .select('_id title highestBidPrice productImage statusSold')
             .exec()
             .then((productList) => {
                 res.status(200).json({
@@ -36,6 +37,7 @@ module.exports = {
                         productData.title = productItem.title
                         productData.price = productItem.highestBidPrice
                         productData.productImage = productItem.productImage
+                        productData.statusSold = productItem.statusSold
                         productData['request'] = {
                             type: 'GET',
                             url: 'http://localhost:3000/products/' + productItem._id
