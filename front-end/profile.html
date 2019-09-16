@@ -16,7 +16,7 @@
 
 <body>
     <!-- Main Navigation -->
-    <nav class="" role="navigation">
+    <!-- <nav class="" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo">
                 <img src="img/logo.png" alt="">
@@ -29,6 +29,23 @@
             <ul id="nav-mobile" class="sidenav">
                 <div class="dummy-profile-image"></div>
                 <li><a href="profile.html">Your Name</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav> -->
+
+    <!-- Main Navigation -->
+    <nav class="" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="img/logo.png" alt="">
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -56,18 +73,22 @@
 
 
     <!--=============== Content Start ================= -->
+
     <div class="profile-header">
         <div class="container">
             <div class="border">
                 <div class="row">
-                    <div class="col s4 m4 l4">
-                        <div class="dummy-profile-image right"></div>
+                    <div class="col s12 m6 l4">
+                        <img src="img/profile-image.png" id="user-profile" width="100%" height="100%">
                     </div>
-                    <div class="col s6 m6 l6">
-                        <h2 class="white-text">Your Name</h2>
-                        <h4 class="white-text">Your Sub title</h4>
+                    <div class="col s12 m6 l8">
+                        <h2 id="userName" class="white-text"></h2>
                         <div class="white-text">
-
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
                         </div>
                         <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo obcaecati distinctio inventore ad eaque repellat consequuntur, quam ullam. Temporibus, unde! Nisi quos, voluptatum iure corrupti illum deleniti temporibus earum?</p>
                     </div>
@@ -76,7 +97,6 @@
 
                         <!-- Modal Trigger -->
                         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post Add</a>
-
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
@@ -113,14 +133,14 @@
                                     </div>
                                     <div class="row s12">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                      <i class="material-icons right">cloud</i>
-                    </button>
+                                              <i class="material-icons right">cloud</i>
+                                          </button>
                                     </div>
                                 </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                                <a href="#!" class="modal-close waves-effect waves-green btn red btn-flat">Cancel</a>
                             </div>
                         </div>
 
@@ -128,12 +148,12 @@
                 </div>
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <p class="white-text"><strong>Email : </strong> someone@gmail.com</p>
-                        <p class="white-text"><strong>Phone : </strong> 123123123</p>
+                        <p id="getEmail" class="white-text"><strong>Email     : </strong> someone@gmail.com</p>
+                        <p id="getContact" class="white-text"><strong>Phone     : </strong> 123123123</p>
                     </div>
                     <div class="col s6 m6 l6">
-                        <p class="white-text"><strong>City : </strong> Some City</p>
-                        <p class="white-text"><strong>Address : </strong> somewhere in this world</p>
+                        <p class="white-text"><strong>City     : </strong> Some City</p>
+                        <p class="white-text"><strong>Address     : </strong> somewhere in this world</p>
                     </div>
                 </div>
             </div>
@@ -146,27 +166,34 @@
         <div class="col s12">
             <ul class="tabs center">
                 <li class="tab col s3"><a href="#adds">Your Adds</a></li>
-                <li class="tab col s3"><a class="active" href="#comments">Your Comments</a></li>
+                <li class="tab col s3"><a class="active" href="#comments">Your Bids</a></li>
             </ul>
         </div>
         <div id="adds" class="col s12">
             <div id="your-add-list">
                 <div class="container">
                     <div class="row">
-                        <div class="col s12 m12 l12">
-                            <div class="add-card">
-                                <div class="row">
-                                    <div class="col s3 m3 l3">
-                                        <div class="dummy-add-image">Dummy Image</div>
+                        <div class="col s12 m12">
+                            <div id="my-card" class="card horizontal">
+                                <div class="card-image">
+                                    <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
+                                </div>
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="col s12 m9 l9">
+                                                <h5>MAIN TITLE GOES HERE</h5>
+                                                <h5>SUB-TITLE</h5>
+                                                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                            </div>
+                                            <div class="col s12 m3 l3">
+                                                <h5>$323.33</h5>
+                                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Detail</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col s6 m6 l6">
-                                        <h3 class="add-card-h3">Some Heading</h3>
-                                        <h4 class="add-card-h4">Sub Heading</h4>
-                                        <p class="add-card-p">scrambled it to make a type specimen book. It has survived not only five centuries, but als the leap into electronic typesetting, remaining Essentially unchanged. It was popularised in the 1960s with the</p>
-                                    </div>
-                                    <div class="col s3 m3 l3">
-                                        <h4 class="button">$342.00</h4>
-                                    </div>
+                                    <!-- <div class="card-action">
+                  </div> -->
                                 </div>
                             </div>
                         </div>
@@ -183,68 +210,16 @@
                         <div class="comment-list">
                             <div class="comment">
                                 <div class="row">
-                                    <div class="col s3 m3 l3">
-                                        <div class="dummy-comment-profile-image"></div>
-                                        <h3>User Name</h3>
+                                    <div class="col s12 m3 l3 center">
+                                        <img src="img/profile-image.png" width="40%">
+                                        <h5>User Name</h5>
                                     </div>
-                                    <div class="col s6 m6 l6">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
-                                            sed iste!</p>
+                                    <div class="col s12 m6 l6">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elitdolor sit amet consectetur adipisicing elit. Cor</p>
                                     </div>
-                                    <div class="col s3 m3 l3">
-                                        <h3>$234.23</h3>
-                                        <h3 class="bid-status red-text">Rejected</h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="row">
-                                    <div class="col s3 m3 l3">
-                                        <div class="dummy-comment-profile-image"></div>
-                                        <h3>User Name</h3>
-                                    </div>
-                                    <div class="col s6 m6 l6">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
-                                            sed iste!</p>
-                                    </div>
-                                    <div class="col s3 m3 l3">
-                                        <h3>$234.23</h3>
-                                        <h3 class="bid-status green-text">Accepted</h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="row">
-                                    <div class="col s3 m3 l3">
-                                        <div class="dummy-comment-profile-image"></div>
-                                        <h3>User Name</h3>
-                                    </div>
-                                    <div class="col s6 m6 l6">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
-                                            sed iste!</p>
-                                    </div>
-                                    <div class="col s3 m3 l3">
-                                        <h3>$234.23</h3>
-                                        <h3 class="bid-status yellow-text">Pending</h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="row">
-                                    <div class="col s3 m3 l3">
-                                        <div class="dummy-comment-profile-image"></div>
-                                        <h3>User Name</h3>
-                                    </div>
-                                    <div class="col s6 m6 l6">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis incidunt aperiam voluptate nobis molestiae odit ab necessitatibus quidem, dolor accusantium totam deserunt. Ducimus esse rem, magni assumenda ullam
-                                            sed iste!</p>
-                                    </div>
-                                    <div class="col s3 m3 l3">
-                                        <h3>$234.23</h3>
-                                        <a href="" class="waves-effect waves-light green btn">Accept Offer</a>
+                                    <div class="col s12 m3 l3 center">
+                                        <h6>$234.23</h6>
+                                        <h6 class="bid-status red-text">Rejected</h6>
                                     </div>
                                 </div>
                             </div>
@@ -253,6 +228,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
     </div>
     </div>
@@ -300,9 +277,9 @@
             <div class="row center">
                 <div class="col s12 m12 l12">
                     <ul class="my-links">
-                        <li><a href="#">BLOG |</a></li>
-                        <li><a href="#"> YouTube </a></li>
-                        <li><a href="#"> | Facebook</a></li>
+                        <li><a href="#">BLOG    |</a></li>
+                        <li><a href="#">    YouTube     </a></li>
+                        <li><a href="#">    |      Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -323,7 +300,8 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/myjs.js"></script>
-    <script src="js/init.js"></script>
+    <script type="module" src="./Integration/userProfile.js"></script>
+    <!-- <script src="js/init.js"></script> -->
 
 </body>
 

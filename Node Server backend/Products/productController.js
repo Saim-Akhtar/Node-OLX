@@ -26,23 +26,25 @@ module.exports = {
     FetchAll: (req, res, next) => {
 
         Product.find()
-            .select('_id title highestBidPrice productImage statusSold')
+            .select('_id title highestBidPrice productImage statusSold userID priceByOwner')
+            .populate('userID', '_id method local google facebook')
             .exec()
             .then((productList) => {
                 res.status(200).json({
                     Total_Products: productList.length,
-                    Products: productList.map(productItem => {
-                        const productData = {}
-                        productData.id = productItem._id
-                        productData.title = productItem.title
-                        productData.price = productItem.highestBidPrice
-                        productData.productImage = productItem.productImage
-                        productData.statusSold = productItem.statusSold
-                        productData['request'] = {
-                            type: 'GET',
-                            url: 'http://localhost:3000/products/' + productItem._id
-                        }
-                        return productData
+                    Products: productList.map(product => {
+                        const productItem = {}
+                        productItem.id = product._id
+                        productItem.title = product.title
+                        productItem.highestBidPrice = product.highestBidPrice
+                        productItem.productImage = product.productImage
+                        productItem.statusSold = product.statusSold
+                        productItem.priceByOwner = product.priceByOwner
+                        productItem.userID = product.userID._id
+                        const method = product.userID.method
+                        productItem.firstName = product.userID[method].firstName
+
+                        return productItem
                     })
                 })
             })
