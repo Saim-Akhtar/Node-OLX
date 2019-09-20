@@ -21,7 +21,6 @@ passport.use(new LocalStrategy({
 
             // If not, handle it
             if (!user) {
-
                 return done(null, false, { message: "User Not Found" });
             }
 
@@ -48,24 +47,25 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
 }, async(accessToken, refreshToken, profile, done) => {
     try {
         // Should have full user profile over here
-        console.log('profile', profile);
-        console.log('accessToken', accessToken);
-        console.log('refreshToken', refreshToken);
+        // console.log('profile', profile);
+        // console.log('accessToken', accessToken);
+        // console.log('refreshToken', refreshToken);
 
         const existingUser = await User.findOne({ "google.id": profile.id });
         if (existingUser) {
             return done(null, existingUser);
         }
-
+        // the changes are made here 9/18/2019
         const newUser = new User({
             _id: mongoose.Types.ObjectId(),
             method: 'google',
+            firstName: profile.name.givenName,
+            lastName: profile.name.familyName,
+            profilePic: profile.photos[0].value,
             google: {
                 id: profile.id,
                 email: profile.emails[0].value,
-                firstName: profile.name.givenName,
-                lastName: profile.name.familyName,
-                profilePic: profile.photos[0].value
+
             }
         });
 
@@ -81,24 +81,26 @@ passport.use('facebookToken', new FacebookTokenStrategy({
     clientSecret: process.env.oauth_facebook_clientSecret
 }, async(accessToken, refreshToken, profile, done) => {
     try {
-        console.log('profile', profile);
-        console.log('accessToken', accessToken);
-        console.log('refreshToken', refreshToken);
+        // console.log('profile', profile);
+        // console.log('accessToken', accessToken);
+        // console.log('refreshToken', refreshToken);
 
         const existingUser = await User.findOne({ "facebook.id": profile.id });
         if (existingUser) {
             return done(null, existingUser);
         }
 
+        // the changes are made here 9/18/2019
         const newUser = new User({
             _id: mongoose.Types.ObjectId(),
             method: 'facebook',
+            firstName: profile.name.givenName,
+            lastName: profile.name.familyName,
+            profilePic: profile.photos[0].value,
             facebook: {
                 id: profile.id,
                 email: profile.emails[0].value,
-                firstName: profile.name.givenName,
-                lastName: profile.name.familyName,
-                profilePic: profile.photos[0].value
+
             }
         });
 

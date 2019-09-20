@@ -1,12 +1,12 @@
 const checkUserAuth = () => {
     const authenticationToken = localStorage.getItem('userAuthToken')
-    return authenticationToken
+    return JSON.parse(authenticationToken)
 }
 
 const navBar_Auth = () => {
     const authenticationToken = checkUserAuth()
     if (authenticationToken === null) {
-        return false
+        return null
     }
     const logButtons = [...document.querySelectorAll('.log_Button')]
 
@@ -14,10 +14,17 @@ const navBar_Auth = () => {
         button.setAttribute('href', 'index.html')
         button.innerHTML = 'Log Out'
         button.addEventListener('click', () => {
+            // console.log('signing out')
+            if (authenticationToken.method === 'google') {
+                signOut()
+            }
             localStorage.removeItem('userAuthToken')
         })
     })
-    return true
+    return authenticationToken
 }
+
+
+
 
 export default { checkUserAuth, navBar_Auth }

@@ -16,14 +16,14 @@ generateToken = user => {
 module.exports = {
     signUp: async(req, res, next) => {
 
-        const { email, password, firstName, lastName, contact } = req.body;
+        const { email, password, firstName, lastName, contact, profilePic, city } = req.body;
 
 
-        let profilePic = null
+        // let profilePic = null
 
-        if (req.file !== undefined) {
-            profilePic = req.file.path
-        }
+        // if (req.file !== undefined) {
+        //     profilePic = req.file.path
+        // }
 
         // Check if there is a user with the same email
         const foundUser = await User.findOne({ "local.email": email });
@@ -35,13 +35,14 @@ module.exports = {
         const newUser = new User({
             _id: mongoose.Types.ObjectId(),
             method: 'local',
+            firstName: firstName,
+            lastName: lastName,
+            contact: contact,
+            profilePic: profilePic,
+            city: city,
             local: {
                 email: email,
                 password: password,
-                firstName: firstName,
-                lastName: lastName,
-                contact: contact,
-                profilePic: profilePic
             }
 
         });
@@ -50,10 +51,15 @@ module.exports = {
         // Generate the token
         const token = generateToken(newUser);
 
+
+        // the changes are made here 9/18/2019
         // Respond with token
+
         res.status(200).json({
             token: token,
-            id: "The id is " + newUser._id
+            id: newUser._id,
+            username: `${newUser.firstName} ${newUser.lastName}`,
+            method: newUser.method
         });
     },
 
@@ -61,29 +67,36 @@ module.exports = {
 
         // Generate token
         const token = generateToken(req.user);
+        // the changes are made here 9/18/2019
 
         res.status(200).json({
             token: token,
-            id: "The id is " + req.user._id
+            id: req.user._id,
+            username: `${req.user.firstName} ${req.user.lastName}`,
+            method: req.user.method
         });
     },
     googleOAuth: async(req, res, next) => {
         // Generate token
         const token = generateToken(req.user);
-
+        // the changes are made here 9/18/2019
         res.status(200).json({
             token: token,
-            id: "The id is " + req.user._id
+            id: req.user._id,
+            username: `${req.user.firstName} ${req.user.lastName}`,
+            method: req.user.method
         });
     },
 
     facebookOAuth: async(req, res, next) => {
         // Generate token
         const token = generateToken(req.user);
-
+        // the changes are made here 9/18/2019
         res.status(200).json({
             token: token,
-            id: "The id is " + req.user._id
+            id: req.user._id,
+            username: `${req.user.firstName} ${req.user.lastName}`,
+            method: req.user.method
         });
     },
 
@@ -91,7 +104,7 @@ module.exports = {
     GetProfile: (req, res, next) => {
         const id = req.params.userID
         User.findById(id)
-            .select('_id method local google facebook')
+            .select('_id firstName lastName contact profilePic city method local.email google.email facebook.email')
             .then(user => {
 
                 if (!user) {

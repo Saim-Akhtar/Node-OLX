@@ -27,7 +27,7 @@ module.exports = {
 
         Product.find()
             .select('_id title highestBidPrice productImage statusSold userID priceByOwner')
-            .populate('userID', '_id method local google facebook')
+            .populate('userID', '_id firstName lastName')
             .exec()
             .then((productList) => {
                 res.status(200).json({
@@ -40,9 +40,9 @@ module.exports = {
                         productItem.productImage = product.productImage
                         productItem.statusSold = product.statusSold
                         productItem.priceByOwner = product.priceByOwner
+                            // the changes are made here 9/18/2019
                         productItem.userID = product.userID._id
-                        const method = product.userID.method
-                        productItem.firstName = product.userID[method].firstName
+                        productItem.name = `${product.userID.firstName} ${product.userID.lastName}`
 
                         return productItem
                     })
@@ -61,12 +61,14 @@ module.exports = {
         const id = req.params.productID
         Product.findById(id)
             .select('title category priceByOwner time productImage statusSold highestBidPrice buyer bids')
-            .populate('userID', '_id method local google facebook')
+            .populate('userID', '_id firstName lastName')
             .then((product) => {
                 if (product) {
+                    // the changes are made here 9/18/2019
                     res.status(200).json({
                         Product: product,
-                        id: id
+                        id: id,
+                        userID: product.userID._id
                     })
                 } else {
                     res.status(420).json({
@@ -90,10 +92,10 @@ module.exports = {
             userID: req.body.userID,
             title: req.body.title,
             category: req.body.category,
-            time: req.body.time,
             priceByOwner: req.body.price,
             highestBidPrice: req.body.price,
-            productImage: req.file.path
+            // productImage: req.file.path
+            productImage: req.body.productImage
         })
 
         // Saving the Product Into the Database

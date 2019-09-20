@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Online Auction System</title>
-
+    <meta name="google-signin-client_id" content="358284062491-htghid97i9onhs4v9it3u7u9r1ruaki8.apps.googleusercontent.com">
     <!-- CSS  -->
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,11 +22,11 @@
                 <img src="img/logo.png" alt="">
             </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+                <li><a href="authentication.html" class="log_Button">Login/Register</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
-                <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+                <li><a href="authentication.html" class="log_Button">Login/Register</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -41,10 +41,9 @@
                     <li><a href="#">Cars</a></li>
                     <li><a href="#">Bikes</a></li>
                     <li><a href="#">Exotic Items</a></li>
-                    <li><a href="#">Militry Equipments</a></li>
-                    <li><a href="#">Hunting</a></li>
-                    <li><a href="#">Left Overs</a></li>
-                    <li><a href="#">More</a></li>
+                    <li><a href="#">Weapons</a></li>
+                    <li><a href="#">Mobiles</a></li>
+
                 </ul>
             </div>
         </div>
@@ -219,10 +218,27 @@
 
 
     <!--  Scripts-->
+    <script>
+        function signOut() {
+
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+        }
+
+        function onload() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init();
+            });
+        }
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=onload" async defer></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/myjs.js"></script>
     <script type="module" src="./Integration/index.js"></script>
+
     <!-- <script src="js/init.js"></script> -->
 
 </body>

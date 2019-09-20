@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Online Auction System</title>
-
+    <meta name="google-signin-client_id" content="358284062491-htghid97i9onhs4v9it3u7u9r1ruaki8.apps.googleusercontent.com">
     <!-- CSS  -->
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,11 +22,11 @@
                 <img src="img/logo.png" alt="">
             </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Login or Register</a></li>
+                <li><a href="authentication.html" class="log_Button">Login/Register</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
-                <li><a href="#">Login or Register</a></li>
+                <li><a href="authentication.html" class="log_Button">Login/Register</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -41,10 +41,8 @@
                     <li><a href="#">Cars</a></li>
                     <li><a href="#">Bikes</a></li>
                     <li><a href="#">Exotic Items</a></li>
-                    <li><a href="#">Militry Equipments</a></li>
-                    <li><a href="#">Hunting</a></li>
-                    <li><a href="#">Left Overs</a></li>
-                    <li><a href="#">More</a></li>
+                    <li><a href="#">Weapons</a></li>
+                    <li><a href="#">Mobiles</a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +57,7 @@
         <div class="add-header">
             <div class="row">
                 <div class="col s12 m5 l5 center">
-                    <img src="img/add-thumbnail-03.jpg" width="100%" alt="">
+                    <img src="" id="productImage" width="100%" height="50%" alt="">
                 </div>
                 <div class="col s12 m5 l5">
                     <h5 class="product-main-title"></h5>
@@ -73,7 +71,31 @@
                 <div class="col s5 m2 l2 align-center">
                     <h6 class="add-price center-align">$343.00</h6>
                     <h6 class="status-sold center-align">Unsold</h6>
-                    <a id="bidButton" class="waves-effect waves-light btn center-align">Bid Now</a>
+                    <a href="#modal1" id="bidButton" class="modal-trigger waves-effect waves-light btn center-align">Bid Now</a>
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <form class="col s12" id="bidForm" action="JavaScript:void(0)">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">attach_money</i>
+                                            <input placeholder="Bidding Price" id="bid_price" type="text" class="validate" required>
+                                            <label for="bid_price">Enter Your Offer Price</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row s12">
+                                        <button class="btn modal-close waves-effect waves-light" type="submit">Submit
+                                          <i class="material-icons right">cloud</i>
+                                      </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="JavaScript:void(0)" class="modal-close waves-effect waves-green btn red white-text btn-flat">Cancel</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,6 +179,23 @@
 
 
     <!--  Scripts-->
+    <script>
+        function signOut() {
+
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+        }
+
+        function onload() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init();
+            });
+        }
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=onload" async defer></script>
+
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/myjs.js"></script>
