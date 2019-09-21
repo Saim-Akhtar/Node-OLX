@@ -21,6 +21,18 @@ $(document).ready(function() {
     $('select').formSelect();
 });
 
+
+// side navbar
+$(document).ready(function() {
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown({
+        hover: true,
+        coverTrigger: false
+
+    });
+
+});
+
 // adding and removing card class 
 
 $(document).ready(function($) {

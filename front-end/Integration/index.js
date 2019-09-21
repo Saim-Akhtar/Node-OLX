@@ -54,12 +54,12 @@ const insertProduct = (productList, product) => {
         <div class="row">
             <div class="col s12 m9 l9">
                 <h5>${product.title}</h5>
-                <h6>Ad by <a target="_blank" href="profile.html?profileID=${product.userID}"> ${product.name} </a></h6>
+                <h6>Ad by <a  href="profile.html?profileID=${product.userID}"> ${product.name} </a></h6>
             </div>
             <div class="col s12 m3 l3">
                 <h5>Current Bid: $${product.highestBidPrice}</h5>
                 <br>
-                <a target="_blank" class="waves-effect waves-light btn" href="adds.html?productID=${product.id}">View Product</a>
+                <a  class="waves-effect waves-light btn" href="adds.html?productID=${product.id}">View Product</a>
             </div>
         </div>
     </div>

@@ -227,6 +227,19 @@ module.exports = {
                     status: "404"
                 })
             })
+    },
+
+    // Fetch a User Products
+    Fetch_UserProducts: async(req, res, next) => {
+        const userID = req.params.userID
+        try {
+            const userProducts = await Product.find({ 'userID': userID }).select('_id title highestBidPrice statusSold')
+            const user_bidProducts = await Product.find({ 'bids.bidderID': userID }).select('_id title highestBidPrice statusSold buyer')
+            res.status(200).json({ userProducts, user_bidProducts })
+        } catch (err) {
+            res.status(404).json(err)
+        }
+
     }
 
 }

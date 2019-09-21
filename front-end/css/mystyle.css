@@ -1,9 +1,13 @@
-
-
 /* Navigation */
+
 nav {
     background-color: #1661be;
 }
+
+.sidenav-trigger {
+    cursor: pointer
+}
+
 
 /* Catogeries */
 
@@ -16,14 +20,29 @@ nav {
     padding-left: 10px;
 }
 
+
+/* CSS design by Saim Node */
+
+.capital {
+    text-transform: capitalize
+}
+
+.bold-letters {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.container_padding {
+    padding: 2em 0;
+}
+
+
 /* Add-card Design */
 
 .add-card {
-
-    -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
-    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);    
-
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
 }
 
 .add-card-h3 {
@@ -35,29 +54,32 @@ nav {
 }
 
 .dummy-add-image {
-   background-color: gray;
-   height: 160px;
-   width: 180px;
-   margin: 5px;
-   color: white;
-   font-size: 30px;
-   padding: 20px;
+    background-color: gray;
+    height: 160px;
+    width: 180px;
+    margin: 5px;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
 }
+
 
 /* ADD HEADER DESIGN */
 
 .add-header {
-    border: 2px solid rgba(0,0,255, 0.5);
+    border: 2px solid rgba(0, 0, 255, 0.5);
     padding: 2%;
     border-radius: 15px;
 }
 
+
 /* Footer */
+
 .page-footer {
     background-color: #1661be;
 }
 
-.my-links   {
+.my-links {
     display: inline;
 }
 
@@ -75,6 +97,7 @@ nav {
     background-position: center;
     min-height: 500px;
 }
+
 
 /* .profile-header {
     background-color: #1661be;
@@ -112,8 +135,8 @@ nav {
     background-color: white;
     margin-top: 7px;
     padding: 20px;
-
 }
+
 
 /* Dummy Comment Profile Image */
 
@@ -127,10 +150,9 @@ nav {
 }
 
 .comment-list {
-    -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15);
-    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.15); 
-
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
     padding: 15px;
 }
 
@@ -139,13 +161,12 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 }
 
-
 ul.tabs {
-    display : flex;
+    display: flex;
 }
 
 li.tab {
-   flex-basis : 50%;
+    flex-basis: 50%;
 }
 
 li.active {

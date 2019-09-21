@@ -56,7 +56,15 @@ fetch(url, {
 
 const insert_productData = (data, condition) => {
     console.log(data)
+
+
     console.log(condition)
+
+
+    // title of the page
+    document.querySelector('title').innerHTML = data.title
+
+
     const title = document.querySelector('.product-main-title')
     const owner = document.querySelector('.product-sub-title')
     const date = document.querySelector('.product-post-date')
@@ -70,7 +78,7 @@ const insert_productData = (data, condition) => {
 
     // inserting data into HTML page
     title.innerHTML = data.title
-    owner.innerHTML = `Ad by <a href="profile.html?profileID=${data.userID._id}" target="_blank" >
+    owner.innerHTML = `Ad by <a href="profile.html?profileID=${data.userID._id}"  >
                         ${data.userID.firstName} ${data.userID.lastName}</a>`
 
     date.innerHTML = `Date: ${data.time}`
@@ -89,7 +97,7 @@ const insert_productData = (data, condition) => {
     if (data.statusSold === true) {
 
 
-        buyer.innerHTML = `Buyer: <a target="_blank" href="profile.html?profileID=${JSON.parse(data.buyer).buyerID}">${JSON.parse(data.buyer).buyerName}</a> `
+        buyer.innerHTML = `Buyer: <a  href="profile.html?profileID=${JSON.parse(data.buyer).buyerID}">${JSON.parse(data.buyer).buyerName}</a> `
         statusSold.innerHTML = 'Sold'
         statusSold.classList.add('red-text')
         bidButton.classList.add('hide')
@@ -167,7 +175,7 @@ const insert_productData = (data, condition) => {
                 bid_container.innerHTML = `
             <div class="row">
                                 <div class="col s12 m3 l3 center">
-                                    <h5 ><a id="${bid.bidderID}" href="profile.html?profileID=${bid.bidderID}" target="_blank">${bid.bidderName}</a></h5>
+                                    <h5 ><a id="${bid.bidderID}" href="profile.html?profileID=${bid.bidderID}" >${bid.bidderName}</a></h5>
                                 </div>
                                 <div class="col s12 m6 l6">
                                 <h6 class="center">Offered Price: $<span>${bid.biddingPrice}</span></h6>
@@ -181,7 +189,7 @@ const insert_productData = (data, condition) => {
                 bid_container.innerHTML = `
                 <div class="row">
                                     <div class="col s12 m6 l6 center">
-                                        <h5><a href="profile.html?profileID=${bid.bidderID}" target="_blank">${bid.bidderName}</a></h5>
+                                        <h5><a href="profile.html?profileID=${bid.bidderID}" >${bid.bidderName}</a></h5>
                                     </div>
                                     <div class="col s12 m6 l6">
                                     <h6 class="center">Offered Price: $${bid.biddingPrice}</h6>
@@ -328,33 +336,33 @@ const getBids_acceptOffers = () => {
 
 // when owner sells a product
 const send_sellRequest = (buyer) => {
-    const sendingBody = {
+    const bodyData = {
         statusSold: true,
         buyer: JSON.stringify(buyer),
         highestBidPrice: buyer.buyingPrice
     }
-    console.log(sendingBody)
+    console.log(bodyData)
 
     const url = "http://localhost:3000/products/sell/" + productData.id
 
-    // fetch(url, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             "Content-Type": "application/json; charset=UTF-8"
-    //         },
-    //         body: JSON.stringify(sendingBody)
-    //     })
-    //     .then(response => {
-    //         return response.json()
-    //     })
-    //     .then(data => {
-    //         // localStorage.setItem('userAuthToken', JSON.stringify(data))
-    //         // window.location = "index.html"
-    //         console.log(data)
+    fetch(url, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify(bodyData)
+        })
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            // localStorage.setItem('userAuthToken', JSON.stringify(data))
+            window.location.reload()
+                // console.log(data)
 
 
-    //     })
-    //     .catch(err => {
-    //         console.log(`Error : ${err}`)
-    //     })
+        })
+        .catch(err => {
+            console.log(`Error : ${err}`)
+        })
 }

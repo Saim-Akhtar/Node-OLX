@@ -58,5 +58,8 @@ router.patch('/sell/:productID', productController.addBuyer)
 // Delete a Product
 router.delete('/delete/:productID', productController.removeProduct)
 
+// Fetch the products related to a certain user
+router.get('/user/:userID', productController.Fetch_UserProducts)
+
 
 module.exports = router
