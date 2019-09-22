@@ -21,7 +21,7 @@ const index = windowURL.lastIndexOf('productID=') + 10
 let productID = windowURL.slice(index, index + 24)
 console.log(productID)
 
-const url = "http://localhost:3000/products/" + productID
+const url = "https://node-olx-auction.herokuapp.com/products/" + productID
     // console.log(url)
 fetch(url, {
         method: 'GET',
@@ -218,7 +218,7 @@ const bidProduct = (biddingPrice) => {
     biddingData.biddingPrice = biddingPrice
     console.log(biddingData)
 
-    const url = "http://localhost:3000/products/bidding/" + productData.id
+    const url = "https://node-olx-auction.herokuapp.com/products/bidding/" + productData.id
 
     fetch(url, {
             method: 'PATCH',
@@ -255,7 +255,7 @@ const modifyBid = (biddingPrice) => {
     biddingData.biddingPrice = biddingPrice
     console.log(biddingData)
 
-    const url = "http://localhost:3000/products/modifyBid/" + productData.id
+    const url = "https://node-olx-auction.herokuapp.com/products/modifyBid/" + productData.id
 
     fetch(url, {
             method: 'PATCH',
@@ -286,7 +286,7 @@ const modifyBid = (biddingPrice) => {
 // when owner deletes a product
 const deleteProduct = () => {
 
-    const url = "http://localhost:3000/products/delete/" + productData.id
+    const url = "https://node-olx-auction.herokuapp.com/products/delete/" + productData.id
     console.log(url)
     fetch(url, {
             method: 'DELETE',
@@ -343,7 +343,7 @@ const send_sellRequest = (buyer) => {
     }
     console.log(bodyData)
 
-    const url = "http://localhost:3000/products/sell/" + productData.id
+    const url = "https://node-olx-auction.herokuapp.com/products/sell/" + productData.id
 
     fetch(url, {
             method: 'PATCH',

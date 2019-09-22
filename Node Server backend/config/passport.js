@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const passport = require('passport')
+require('dotenv').config()
 const LocalStrategy = require('passport-local').Strategy
 const passportJWT = require('passport-jwt')
 const GooglePlusTokenStrategy = require('passport-google-plus-token');

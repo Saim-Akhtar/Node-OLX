@@ -13,8 +13,8 @@ const index = windowURL.lastIndexOf('profileID=') + 10
 
 let userID = windowURL.slice(index, index + 24)
 console.log(userID)
-const url1 = "http://localhost:3000/user/" + userID
-const url2 = "http://localhost:3000/products/user/" + userID
+const url1 = "https://node-olx-auction.herokuapp.com/user/" + userID
+const url2 = "https://node-olx-auction.herokuapp.com/products/user/" + userID
 
 const fetchRequest1 = fetch(url1, {
     method: 'GET',
@@ -165,7 +165,7 @@ const sendProduct_request = (productData) => {
 
     productData.userID = getAuthToken.id
     console.log(productData)
-    const url = "http://localhost:3000/products"
+    const url = "https://node-olx-auction.herokuapp.com/products"
     fetch(url, {
             method: 'POST',
             headers: {

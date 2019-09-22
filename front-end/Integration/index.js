@@ -4,7 +4,7 @@ import auth from './authCheck.js'
 auth.navBar_Auth()
 
 
-const url = "http://localhost:3000/products"
+const url = "https://node-olx-auction.herokuapp.com/products"
     // On loading , all the products are fetched
 fetch(url, {
         method: 'GET',
