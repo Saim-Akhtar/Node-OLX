@@ -33,6 +33,9 @@ $(document).ready(function() {
 
 });
 
+
+
+
 // adding and removing card class 
 
 $(document).ready(function($) {
@@ -49,6 +52,21 @@ $(document).ready(function($) {
     });
     alterClass();
 });
+
+
+
+// Coded by Saim Node
+
+const toggleSearchBar = () => {
+
+    const searchBar = document.getElementById('searchBar')
+    const logoDiv = document.getElementById('logoDiv')
+    logoDiv.classList.toggle('hide-on-med-and-down')
+    searchBar.classList.toggle('hide-on-med-and-down')
+    searchBar.classList.toggle('s10')
+
+}
+
 
 
 // My way of doing it

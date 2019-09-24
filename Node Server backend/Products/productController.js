@@ -26,7 +26,7 @@ module.exports = {
     FetchAll: (req, res, next) => {
 
         Product.find()
-            .select('_id title highestBidPrice productImage statusSold userID priceByOwner')
+            .select('_id title category highestBidPrice productImage statusSold userID priceByOwner')
             .populate('userID', '_id firstName lastName')
             .exec()
             .then((productList) => {
@@ -36,6 +36,7 @@ module.exports = {
                         const productItem = {}
                         productItem.id = product._id
                         productItem.title = product.title
+                        productItem.category = product.category
                         productItem.highestBidPrice = product.highestBidPrice
                         productItem.productImage = product.productImage
                         productItem.statusSold = product.statusSold

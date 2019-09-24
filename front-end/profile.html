@@ -55,6 +55,7 @@
 
                 <li><a href="JavaScript:void(0)" class="userName hide dropdown-trigger" data-target="profile_dropdown">UserName</a></li>
                 <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+                <li><a href="#" class="btn">Post AD</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
@@ -62,6 +63,7 @@
                 <li><a class="my-products hide" href="#!">My Products</a></li>
                 <li><a class="my-bids hide" href="#!">My Bids</a></li>
                 <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+                <li><a href="#" class="btn">Post AD</a></li>
             </ul>
             <a data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -72,12 +74,12 @@
         <div class="row center">
             <div class="col s12 m12 l12">
                 <ul class="my-links Catogeries">
-                    <li><a href="#">Houses</a></li>
-                    <li><a href="#">Cars</a></li>
-                    <li><a href="#">Bikes</a></li>
-                    <li><a href="#">Exotic Items</a></li>
-                    <li><a href="#">Weapons</a></li>
-                    <li><a href="#">Mobiles</a></li>
+                    <li><a href="index.html?category=house" id="house">Houses</a></li>
+                    <li><a href="index.html?category=car" id="car">Cars</a></li>
+                    <li><a href="index.html?category=bike" id="bike">Bikes</a></li>
+                    <li><a href="index.html?category=exotics" id="exotics">Exotic Items</a></li>
+                    <li><a href="index.html?category=weapon" id="weapon">Weapons</a></li>
+                    <li><a href="index.html?category=mobile" id="mobile">Mobiles</a></li>
                 </ul>
             </div>
         </div>
@@ -133,7 +135,7 @@
                                                         <option value="car">Car</option>
                                                         <option value="bike">Bike</option>
                                                         <option value="house">House</option>
-                                                        <option value="exotic item">Exotic items</option>
+                                                        <option value="exotics">Exotic items</option>
                                                         <option value="weapon">Weapon</option>
                                                       </select>
                                                 <label for="product_category">Category</label>
@@ -193,7 +195,7 @@
         <div id="user-products">
 
 
-            <h3 class="blue-text">
+            <h3 class="my-heading">
                 Products
             </h3>
             <div id="user-products_tableDiv">
@@ -219,7 +221,7 @@
         <div id="user-bids" class="hide">
 
 
-            <h3 class="blue-text">
+            <h3 class="my-heading">
                 My Bids
             </h3>
             <div id="user-bids_tableDiv">

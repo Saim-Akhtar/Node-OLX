@@ -3,6 +3,9 @@ import auth from './authCheck.js'
 // imported function to check authentication and manipulate DOM
 auth.navBar_Auth()
 
+let allProducts
+
+
 
 const url = "https://node-olx-auction.herokuapp.com/products"
     // On loading , all the products are fetched
@@ -15,6 +18,7 @@ fetch(url, {
     })
     .then(response => response.json())
     .then((data) => {
+        allProducts = data.Products
         addProductsInList(data.Products)
             // console.log(data.Products)
     })
@@ -25,6 +29,32 @@ fetch(url, {
 
 // get all the products and productList in HTML page and add products using insertProduct()
 const addProductsInList = (products) => {
+
+
+    // check if the product is search via category
+
+    const windowURL = window.location.href
+    if (windowURL.includes('category=')) {
+
+
+        console.log(windowURL)
+        const index = windowURL.lastIndexOf('category=') + 9
+        let categorySearched = windowURL.slice(index, windowURL.length)
+        categorySearched = categorySearched[categorySearched.length - 1] === "#" ?
+            categorySearched.slice(0, categorySearched.length - 1) : categorySearched
+
+
+        // designing the button of category
+        const category_links = [...document.querySelectorAll('.my-links a')]
+
+        const get_category_btn = category_links.filter(cat => cat.id === categorySearched)[0]
+        get_category_btn.classList.add('btn', 'btn-category')
+
+        // applying search in products
+        products = products.filter(product => product.category === categorySearched)
+
+    }
+
 
     let productList = document.getElementById('productList')
 
@@ -42,7 +72,6 @@ const addProductsInList = (products) => {
 
 // inserts the products in list
 const insertProduct = (productList, product) => {
-    console.log(product)
     const card = document.createElement('div')
     card.classList.add('card', 'horizontal', 'productCard')
     card.innerHTML = `
@@ -68,3 +97,80 @@ const insertProduct = (productList, product) => {
     `
     productList.appendChild(card)
 }
+
+
+
+
+// -----------Below stuff is all applied on the search funcitonality on the top main------------ //
+
+
+// filter the products by title
+const getProductsByTitle = (value) => {
+
+    if (value === "") {
+        return
+    }
+    const list = allProducts.filter(product => product.title.toLowerCase().includes(value))
+    console.log(list)
+    suggestionList.innerHTML = ``
+
+    list.map(element => {
+        const div = document.createElement('div')
+
+        div.innerHTML = `
+
+            <div class="card horizontal" style="height: 50px">
+          <div class="card-image left" style="width: 20%">
+            <img src="${element.productImage}" style="height: 100%">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p><strong> <a  class="black-text" href="adds.html?productID=${element.id}"> ${element.title} </a> </strong></p>
+            </div>
+          </div>
+        </div>
+
+            `
+
+        suggestionList.appendChild(div)
+    });
+
+}
+
+const searchForm = document.getElementById('searchBar')
+const searchBar = searchForm.querySelector('#searchBar input')
+const suggestionList = document.getElementById('search_suggestion')
+const closeSearch = document.getElementById('closeSearch')
+
+searchForm.addEventListener('submit', () => {
+    const searchedItem = searchBar.value.toLowerCase().trim()
+    const queryItem = allProducts.filter(item => item.title.toLowerCase() === searchedItem)[0]
+
+    if (queryItem === undefined) {
+        alert("No Such Product Found")
+        return
+    }
+
+    window.location.href = "adds.html?productID=" + queryItem.id
+
+
+})
+
+
+
+
+closeSearch.addEventListener('click', () => {
+    searchBar.value = ""
+    suggestionList.style.display = "none"
+})
+
+searchBar.addEventListener('keyup', (e) => {
+
+    suggestionList.style.display = "block"
+    const query = e.target
+    const value = query.value.trim()
+    if (value === "") {
+        suggestionList.style.display = "none"
+    }
+    getProductsByTitle(query.value)
+})

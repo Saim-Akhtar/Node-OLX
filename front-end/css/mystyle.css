@@ -23,6 +23,79 @@ nav {
 
 /* CSS design by Saim Node */
 
+#smallScreen-searchBtn {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    z-index: 1001;
+}
+
+#searchBar {
+    padding: 5px 0;
+    position: relative;
+}
+
+#searchBar div.input-field,
+#searchBar input:focus {
+    border-top-left-radius: 23px !important;
+    border-top-right-radius: 23px !important;
+}
+
+#search_suggestion {
+    display: none;
+    /* position: absolute; */
+    margin-top: -2px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+
+/* #search_suggestion::-webkit-scrollbar {
+    width: 16px;
+    background-color: blue;
+} */
+
+#search_suggestion::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+/* Track */
+
+#search_suggestion::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 5px;
+}
+
+
+/* Handle */
+
+#search_suggestion::-webkit-scrollbar-thumb {
+    background: blue;
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+
+#search_suggestion::-webkit-scrollbar-thumb:hover {
+    background: rgb(44, 44, 243);
+}
+
+#searchBar i,
+#searchBar .label-icon {
+    top: -5% !important;
+}
+
+.btn-category {
+    border-radius: 20px;
+}
+
+.carousel {
+    height: 20em !important;
+}
+
 .capital {
     text-transform: capitalize
 }
