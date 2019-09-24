@@ -109,6 +109,17 @@ nav {
     padding: 2em 0;
 }
 
+.container_padding_adposting {
+    padding: 2em 2em;
+}
+
+.heading_design {
+    display: inline-block;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 8px;
+}
+
 
 /* Add-card Design */
 

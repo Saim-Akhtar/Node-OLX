@@ -42,13 +42,9 @@ const fetchData = async() => {
 
 
         if (getAuthToken !== null) {
-            if (userData.userProfile._id !== getAuthToken.id) {
-                document.getElementById('btn_postAd').classList.add('hide')
-            } else {
+            if (userData.userProfile._id === getAuthToken.id) {
                 insert_userBids(user_relatedProducts.user_bidProducts)
             }
-        } else {
-            document.getElementById('btn_postAd').classList.add('hide')
         }
 
 
@@ -131,59 +127,5 @@ const insert_userData = (data) => {
     if (data.profilePic !== null) {
         profilePic.src = data.profilePic
     }
-    // if user is logged in and its his own account
-    // if(getAuthId === true && )
-}
 
-// <--------- Posting an Ad ------------> //
-const postAd = document.querySelector('#productForm')
-postAd.addEventListener('submit', (e) => {
-    const title = postAd.product_title.value
-    const category = postAd.product_category.value
-    const price = (postAd.product_price.value).match(/\d/g).join('');
-
-    let productImage = null //default if user doesn't upload profile picture
-
-    const file = document.querySelector('#productImage').files[0]
-        // checking if user has uploaded a pic
-    if (file !== undefined) {
-        const reader = new FileReader()
-        reader.onload = () => {
-            productImage = reader.result
-            sendProduct_request({ title, category, price, productImage })
-        }
-        reader.readAsDataURL(file)
-    } else {
-        sendProduct_request({ title, category, price, productImage })
-    }
-
-    postAd.reset()
-})
-
-
-const sendProduct_request = (productData) => {
-
-    productData.userID = getAuthToken.id
-    console.log(productData)
-    const url = "https://node-olx-auction.herokuapp.com/products"
-    fetch(url, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-            },
-            body: JSON.stringify(productData)
-        })
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            // localStorage.setItem('userAuthToken', JSON.stringify(data))
-            window.location.reload()
-                // console.log(data)
-
-
-        })
-        .catch(err => {
-            console.log(`Error : ${err}`)
-        })
 }

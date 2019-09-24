@@ -26,8 +26,12 @@ app.use(morgan('combined'))
 
 
 // Parsing Body
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+
+
+
+
 app.use('/userUploads', express.static('userUploads'))
 app.use('/productUploads', express.static('productUploads'))
     // resolving CORS

@@ -7,15 +7,15 @@ const Product = require('../Models/productModel')
 
 // Verifing the highest price in the bids for a Product and returns the Highest Price
 const verifyHighestBidPrice = async(id, req) => {
-    const checkData = await Product.findById(id).select('highestBidPrice bids')
+    const checkData = await Product.findById(id).select('priceByOwner bids')
     let highestPrice
 
     if (checkData.bids.length !== 0) {
         const getBidPrices = checkData.bids.map(bid => bid.biddingPrice)
-        highestPrice = Math.max(...getBidPrices, checkData.highestBidPrice, req.body.biddingPrice)
+        highestPrice = Math.max(...getBidPrices, checkData.priceByOwner, req.body.biddingPrice)
     } else {
-        console.log(checkData.highestBidPrice, req.body.biddingPrice)
-        highestPrice = Math.max(checkData.highestBidPrice, req.body.biddingPrice)
+
+        highestPrice = Math.max(checkData.priceByOwner, req.body.biddingPrice)
     }
     return highestPrice
 }
@@ -103,6 +103,7 @@ module.exports = {
         product.save()
             .then(data => {
                 res.status(201).json({
+                    id: data._id,
                     message: "Product has been added",
                     request: {
                         type: 'GET',
@@ -123,9 +124,11 @@ module.exports = {
     addBid: async(req, res, next) => {
 
         const id = req.params.productID
-        const highestPrice = await verifyHighestBidPrice(id, req)
+
         try {
-            data = await Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice }, "$push": { "bids": req.body } }).exec()
+            data = await Product.update({ _id: id }, { "$push": { "bids": req.body } }).exec()
+            const highestPrice = await verifyHighestBidPrice(id, req)
+            data = await Product.update({ _id: id }, { "$set": { "highestBidPrice": highestPrice } }).exec()
             if (data) {
                 res.status(200).json({
                     message: `Successful bid on ${id} `,
@@ -150,9 +153,11 @@ module.exports = {
     modifyBid: async(req, res, next) => {
 
         const id = req.params.productID
-        const highestPrice = await verifyHighestBidPrice(id, req)
+
         try {
-            data = await Product.update({ _id: id, "bids.bidderID": req.body.bidderID }, { '$set': { 'highestBidPrice': highestPrice, 'bids.$.biddingPrice': req.body.biddingPrice } })
+            data = await Product.update({ _id: id, "bids.bidderID": req.body.bidderID }, { '$set': { 'bids.$.biddingPrice': req.body.biddingPrice } })
+            const highestPrice = await verifyHighestBidPrice(id, req)
+            data = await Product.update({ _id: id }, { '$set': { 'highestBidPrice': highestPrice } })
             if (!data) {
                 res.status(404).json({
                     message: `Failed modified bid on ${id} `,
