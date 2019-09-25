@@ -1,0 +1,13 @@
+{
+    "name": "Node OLX",
+    "short_name": "node_olx",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1661BE",
+    "theme_color": "#1661BE",
+    "icons": [{
+        "src": "/img/logo.png",
+        "type": "image/png",
+        "size": "72x72"
+    }]
+}
