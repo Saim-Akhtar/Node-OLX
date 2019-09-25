@@ -69,21 +69,26 @@
 
     <div class="container container_padding">
 
-        <h3 class="center"><span class="heading_design">Post Ad and Sell Your Product</span></h3>
-        <br>
-        <form id="productForm" class="container container_padding_adposting grey lighten-5" action="JavaScript:void(0)">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">title</i>
-                    <input placeholder="Placeholder" id="product_title" type="text" class="validate" required>
-                    <label for="product_title">Product Title</label>
+        <div class="container">
+
+
+
+            <h3 class="center"><span class="heading_design">Post Ad and Sell Your Product</span></h3>
+            <br>
+
+            <form id="productForm" class="container_padding_adposting white z-depth-2" action="JavaScript:void(0)">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">title</i>
+                        <input placeholder="Placeholder" id="product_title" type="text" class="validate" required>
+                        <label for="product_title">Product Title</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">view_list</i>
-                    <!-- <input placeholder="Placeholder" id="product_category" type="text" class="validate"> -->
-                    <select id="product_category" required>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">view_list</i>
+                        <!-- <input placeholder="Placeholder" id="product_category" type="text" class="validate"> -->
+                        <select id="product_category" required>
                                 
                                 <option value="mobile">Mobile</option>
                                 <option value="car">Car</option>
@@ -92,37 +97,37 @@
                                 <option value="exotics">Exotic items</option>
                                 <option value="weapon">Weapon</option>
                               </select>
-                    <label for="product_category">Category</label>
+                        <label for="product_category">Category</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
+                <div class="row">
 
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">attach_money</i>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">attach_money</i>
 
-                    <input placeholder="Placeholder" id="product_price" type="text" class="validate" required>
-                    <label for="product_price">Enter your Product Starting Price( $ )</label>
+                        <input placeholder="Placeholder" id="product_price" type="text" class="validate" required>
+                        <label for="product_price">Enter your Product Starting Price( $ )</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="file-field input-field">
-                <div class="btn">
-                    <span><i class="material-icons">attach_file</i></span>
-                    <input type="file" id="productImage" required>
+                <div class="file-field input-field">
+                    <div class="btn blue">
+                        <span><i class="material-icons">attach_file</i></span>
+                        <input type="file" id="productImage" required>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload Product Image">
+                    </div>
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload Product Image">
-                </div>
-            </div>
 
 
-            <button class="btn waves-effect waves-light right" type="submit">Post
+                <button class="btn waves-effect waves-light right blue" type="submit">Post
                       <i class="material-icons right">cloud</i>
                   </button>
-            <div class="clearfix"></div>
-        </form>
-
+                <div class="clearfix"></div>
+            </form>
+        </div>
     </div>
 
 
