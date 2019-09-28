@@ -1,0 +1,259 @@
+/* Navigation */
+
+nav {
+    background-color: #1661be;
+}
+
+.sidenav-trigger {
+    cursor: pointer
+}
+
+
+/* Catogeries */
+
+.cat {
+    margin-top: 20px;
+}
+
+.my-heading {
+    border-left: 12px solid #1661be;
+    padding-left: 10px;
+}
+
+
+/* CSS design by Saim Node */
+
+#smallScreen-searchBtn {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    z-index: 1001;
+}
+
+#searchBar {
+    padding: 5px 0;
+    position: relative;
+}
+
+#searchBar div.input-field,
+#searchBar input:focus {
+    border-top-left-radius: 23px !important;
+    border-top-right-radius: 23px !important;
+}
+
+#search_suggestion {
+    display: none;
+    /* position: absolute; */
+    margin-top: -2px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+
+/* #search_suggestion::-webkit-scrollbar {
+    width: 16px;
+    background-color: blue;
+} */
+
+#search_suggestion::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+/* Track */
+
+#search_suggestion::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 5px;
+}
+
+
+/* Handle */
+
+#search_suggestion::-webkit-scrollbar-thumb {
+    background: blue;
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+
+#search_suggestion::-webkit-scrollbar-thumb:hover {
+    background: rgb(44, 44, 243);
+}
+
+#searchBar i,
+#searchBar .label-icon {
+    top: -5% !important;
+}
+
+.btn-category {
+    border-radius: 20px;
+}
+
+.carousel {
+    height: 20em !important;
+}
+
+.capital {
+    text-transform: capitalize
+}
+
+.bold-letters {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.container_padding {
+    padding: 2em 0;
+}
+
+.container_padding_adposting {
+    padding: 2em 2em;
+    border: 3px solid teal;
+}
+
+.heading_design {
+    display: inline-block;
+    border: 5px solid blue;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+
+/* Add-card Design */
+
+.add-card {
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+.add-card-h3 {
+    margin-top: 10px;
+}
+
+.add-card-h4 {
+    margin-top: -10px;
+}
+
+.dummy-add-image {
+    background-color: gray;
+    height: 160px;
+    width: 180px;
+    margin: 5px;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+}
+
+
+/* ADD HEADER DESIGN */
+
+.add-header {
+    border: 2px solid rgba(0, 0, 255, 0.5);
+    padding: 2%;
+    border-radius: 15px;
+}
+
+
+/* Footer */
+
+.page-footer {
+    background-color: #1661be;
+}
+
+.my-links {
+    display: inline;
+}
+
+.my-links li {
+    display: inline;
+    padding-right: 20px;
+}
+
+
+/* Header Design */
+
+.profile-header {
+    background-color: #1661be;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+
+/* .profile-header {
+    background-color: #1661be;
+    width: 100%;
+    height: 450px;
+    margin-bottom: 20px;
+    padding: 5%;
+} */
+
+.border {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 5%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.dummy-profile-image {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background-color: white;
+}
+
+.dummy-main-add-image {
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+}
+
+.dummy-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    margin-top: 7px;
+    padding: 20px;
+}
+
+
+/* Dummy Comment Profile Image */
+
+.dummy-comment-profile-image {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.comment-list {
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+}
+
+.comment {
+    margin-top: 4%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+ul.tabs {
+    display: flex;
+}
+
+li.tab {
+    flex-basis: 50%;
+}
+
+li.active {
+    background-color: blue;
+}

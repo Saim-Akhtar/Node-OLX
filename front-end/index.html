@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Node OLX</title>
+    <meta name="google-signin-client_id" content="358284062491-htghid97i9onhs4v9it3u7u9r1ruaki8.apps.googleusercontent.com">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link href="css/mystyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- Manifest -->
+    <link rel="Manifest" href="manifest.json">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <div class="navbar-fixed">
+
+
+        <nav class="" role="navigation">
+            <div class="nav-wrapper row">
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+
+                <div id="logoDiv" class="col l2">
+
+
+                    <a id="logo-container" href="index.html" class="brand-logo">
+                        <!-- <img src="img/logo.png" alt=""> -->
+                        Node OLX
+                    </a>
+                </div>
+                <form class="col l5 hide-on-med-and-down" id="searchBar" action="JavaScript:void(0)">
+                    <div class="input-field">
+                        <input type="search" autofocus placeholder="Search By Title" required>
+                        <label class="label-icon" for="search"><i class="material-icons ">search</i></label>
+                        <i class="material-icons" id="closeSearch">close</i>
+                    </div>
+                    <div class="white z-depth-1 black-text" id="search_suggestion">
+
+
+
+                        </ul>
+                    </div>
+
+                </form>
+
+
+
+
+                <ul class="col l5 right hide-on-med-and-down ">
+                    <!-- Dropdown Structure -->
+                    <ul id="profile_dropdown" class="dropdown-content">
+                        <li><a class="my-products" href="#!">My Products</a></li>
+
+                        <li class="divider"></li>
+                        <li><a class="my-bids" href="#!">My Bids</a></li>
+                    </ul>
+                    <li><a href="JavaScript:void(0)" class="userName hide dropdown-trigger" data-target="profile_dropdown">UserName</a></li>
+                    <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+                    <li><a href="AdPosting.html" class="btn">Post AD</a></li>
+                </ul>
+
+
+
+            </div>
+        </nav>
+    </div>
+
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="JavaScript:void(0)" class="userName hide">UserName</a></li>
+        <li><a class="my-products hide" href="#!">My Products</a></li>
+        <li><a class="my-bids hide" href="#!">My Bids</a></li>
+        <li><a href="authentication.html" class="log_Button">Login or Register</a></li>
+        <li><a href="AdPosting.html" class="btn">Post AD</a></li>
+    </ul>
+
+    <!-- Fixed search for small screen -->
+
+    <button id="smallScreen-searchBtn" onclick="toggleSearchBar()" class="btn btn-floating hide-on-large-only"><i class="material-icons">search</i></button>
+
+
+
+    <!-- Catogeries Menu -->
+    <div class="cat">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <ul class="my-links Catogeries">
+
+                    <li><a href="index.html?category=house" id="house">Houses</a></li>
+                    <li><a href="index.html?category=car" id="car">Cars</a></li>
+                    <li><a href="index.html?category=bike" id="bike">Bikes</a></li>
+                    <li><a href="index.html?category=exotics" id="exotics">Exotic Items</a></li>
+                    <li><a href="index.html?category=weapon" id="weapon">Weapons</a></li>
+                    <li><a href="index.html?category=mobile" id="mobile">Mobiles</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Image Slider -->
+
+    <div class="carousel carousel-slider">
+        <a class="carousel-item" href="JavaScript:void(0)"><img src="img/slider-image-1.jpg"></a>
+        <!-- <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a> -->
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h4 class="my-heading">Latest Items Available for Auction</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12">
+
+                <div id="productList" class="col s12 m12">
+                    <!-- <div class="card horizontal productCard">
+                        <div class="card-image">
+                            <img src="img/add-thumbnail-02.jpg" width="100px" height="190px">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col s12 m9 l9">
+                                        <h5>MAIN TITLE GOES HERE</h5>
+                                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                                    </div>
+                                    <div class="col s12 m3 l3">
+                                        <h5>$323.33</h5>
+                                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Post bid</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">View Product</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+
+
+                <!-- MODEL FOR POSTING BID -->
+                <!-- Modal Structure -->
+                <!-- <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Placeholder" id="bid-price" type="text" class="validate">
+                                        <label for="bid-price">Price</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="product_description" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Describe your Bid Briefly</label>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="waves-effect green waves-light btn">Post</a>
+                        <a href="#!" class="modal-close waves-effect waves-green red btn btn-flat">Cancel</a>
+                    </div>
+                </div> -->
+                <!-- ============================ -->
+
+
+                <!-- <div class="card horizontal">
+        <div class="card-image">
+          <img src="img/add-thumbnail-01.jpg" width="100px" height="190px">
+        </div>
+        <div class="card-stacked"></div>
+          <div class="card-content">
+            <div class="row">
+              <div class="col m9 l9">
+                  <h3>Main Title</h3>
+                  <h4>Sub Title</h4>
+                  <p>I am a very simple card. I am good at containing small bits of information.</p>
+              </div>
+              <div class="col m3 l3">
+                <h3>$323.232</h3>
+                <a class="waves-effect green waves-light btn">BID NOW</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+          </div>
+        </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!--=============== Content End================= -->
+
+    <!-- Footer -->
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Menue</a></li>
+                        <li><a href="#">Story</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <ul class="my-links">
+                        <li><a href="#">BLOG    |</a></li>
+                        <li><a href="#">    YouTube     </a></li>
+                        <li><a href="#">    |      Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+
+    <!--  Scripts-->
+    <script>
+        function signOut() {
+
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+        }
+
+        function onload() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init();
+            });
+        }
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=onload" async defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/myjs.js"></script>
+    <script type="module" src="./Integration/index.js"></script>
+
+    <!-- <script src="js/init.js"></script> -->
+
+    <!-- REGISTERING SERVICE WORKER PWA-->
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+        </script>
+
+        <!-- <script src="sw-src.js"></script> -->
+
+</body>
+
+
+</html>
