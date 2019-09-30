@@ -121,6 +121,10 @@ nav {
     padding: 8px;
 }
 
+a.carousel-item {
+    cursor: auto
+}
+
 
 /* Add-card Design */
 

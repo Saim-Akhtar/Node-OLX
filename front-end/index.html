@@ -113,7 +113,7 @@
     </div>
 
     <!-- Content -->
-    <div class="container">
+    <div class="container container_padding">
         <div class="row">
             <div class="col s12 m12 l12">
                 <h4 class="my-heading">Latest Items Available for Auction</h4>
@@ -299,14 +299,14 @@
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
-          // Use the window load event to keep the page load performant
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-          });
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
         }
-        </script>
+    </script>
 
-        <!-- <script src="sw-src.js"></script> -->
+    <!-- <script src="sw-src.js"></script> -->
 
 </body>
 

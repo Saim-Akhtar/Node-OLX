@@ -73,22 +73,22 @@ const addProductsInList = (products) => {
 // inserts the products in list
 const insertProduct = (productList, product) => {
     const card = document.createElement('div')
-    card.classList.add('card', 'horizontal', 'productCard')
+    card.classList.add('card', 'horizontal', 'productCard', 'row', 'container_padding')
     card.innerHTML = `
-    <div class="card-image">
+    <div class="card-image col s12 m5 center">
     <img src="${product.productImage}" width="100px" height="190px">
 </div>
-<div class="card-stacked">
+<div class="card-stacked col s12 m5">
     <div class="card-content">
         <div class="row">
-            <div class="col s12 m9 l9">
+            <div class="col s12 m6 l7">
                 <h5>${product.title}</h5>
                 <h6>Ad by <a  href="profile.html?profileID=${product.userID}"> ${product.name} </a></h6>
             </div>
-            <div class="col s12 m3 l3">
-                <h5>Current Bid: $${product.highestBidPrice}</h5>
+            <div class="col s12 m6 l5">
+                <h6>Current Bid: $${product.highestBidPrice}</h6>
                 <br>
-                <a  class="waves-effect waves-light btn" href="adds.html?productID=${product.id}">View Product</a>
+                <a  class="waves-effect waves-light btn-small" href="adds.html?productID=${product.id}">View Product</a>
             </div>
         </div>
     </div>
