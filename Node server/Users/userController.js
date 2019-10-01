@@ -128,33 +128,33 @@ module.exports = {
     },
 
     // updating the user data
-    updateUser: async(req, res, next) => {
-        const id = req.params.userID
-        console.log(req.body)
+    // updateUser: async(req, res, next) => {
+    //     const id = req.params.userID
+    //     console.log(req.body)
 
-        User.findOneAndUpdate({ _id: id }, req.body).exec()
-            .then(user => {
-                if (!user) {
-                    return res.status(405).json({
-                        message: `No user profile with ID ${id} found to be updated`,
-                        status: "405"
-                    })
-                }
+    //     User.findOneAndUpdate({ _id: id }, req.body).exec()
+    //         .then(user => {
+    //             if (!user) {
+    //                 return res.status(405).json({
+    //                     message: `No user profile with ID ${id} found to be updated`,
+    //                     status: "405"
+    //                 })
+    //             }
 
-                res.status(200).json({
-                    message: "User Profile Updated Successfully",
-                    request: {
-                        type: 'GET',
-                        url: 'http://localhost:3000/users/' + id
-                    }
-                })
-            })
-            .catch(err => {
-                res.status(404).json({
-                    Error: err,
-                    message: "Failed to update user profile",
-                    status: "404"
-                })
-            })
-    }
+    //             res.status(200).json({
+    //                 message: "User Profile Updated Successfully",
+    //                 request: {
+    //                     type: 'GET',
+    //                     url: 'http://localhost:3000/users/' + id
+    //                 }
+    //             })
+    //         })
+    //         .catch(err => {
+    //             res.status(404).json({
+    //                 Error: err,
+    //                 message: "Failed to update user profile",
+    //                 status: "404"
+    //             })
+    //         })
+    // }
 }

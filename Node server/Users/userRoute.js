@@ -54,7 +54,7 @@ router.post('/oauth/facebook', passport.authenticate('facebookToken', { session:
 router.get('/:userID', userController.GetProfile)
 
 // Update User 
-router.patch('/:userID', userController.updateUser)
+// router.patch('/:userID', userController.updateUser)
 
 
 
