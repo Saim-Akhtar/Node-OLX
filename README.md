@@ -58,7 +58,12 @@ Open the index.html with live browser
 - Mongoose
 - Bcrypt (For Password Hashing)
 
-## Technologies Used for Authentication
+## Testing Tools
+- Mocha
+- Chai
+- Chai-http
+
+## Authentication Tools
 
 - JSON Web Tokens
 - Passport
