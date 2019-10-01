@@ -42,7 +42,7 @@ const sendProduct_request = (productData) => {
 
     productData.userID = getAuthToken.id
     console.log(productData)
-    const url = "https://node-olx-auction.herokuapp.com/products"
+    const url = "http://localhost:3000/products"
     fetch(url, {
             method: 'POST',
             headers: {

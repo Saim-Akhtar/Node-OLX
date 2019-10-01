@@ -12,7 +12,7 @@ const login = document.querySelector('#login form')
 login.addEventListener('submit', (e) => {
     const email = login.email.value
     const password = login.password.value
-    const url = "https://node-olx-auction.herokuapp.com/user/login"
+    const url = "http://localhost:3000/user/login"
     fetch(url, {
             method: 'POST',
             headers: {
@@ -69,7 +69,7 @@ register.addEventListener('submit', (e) => {
 // Getting the user data and sendin POST request to the server
 const sendRegister_request = (userData) => {
     console.log(userData)
-    const url = "https://node-olx-auction.herokuapp.com/user/signup"
+    const url = "http://localhost:3000/user/signup"
     fetch(url, {
             method: 'POST',
             headers: {

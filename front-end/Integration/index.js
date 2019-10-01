@@ -7,7 +7,7 @@ let allProducts
 
 
 
-const url = "https://node-olx-auction.herokuapp.com/products"
+const url = "http://localhost:3000/products"
     // On loading , all the products are fetched
 fetch(url, {
         method: 'GET',

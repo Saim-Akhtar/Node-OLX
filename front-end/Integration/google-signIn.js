@@ -15,7 +15,7 @@ function onSignIn(googleUser) {
         // console.log("Access Token: " + auth.access_token)
 
     console.log('after response')
-    const url = "https://node-olx-auction.herokuapp.com/user/oauth/google"
+    const url = "http://localhost:3000/user/oauth/google"
 
     fetch(url, {
             method: 'POST',
